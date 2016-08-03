@@ -1,0 +1,26 @@
+.main-content .logo > * {
+    font-weight: 900;
+    color: green;
+}
+
+.input-group-addon {
+    background-color: white;
+    color: green;
+}
+
+* {
+    border-radius: 0px !important;
+}
+
+.main-content .buttons a.btn {
+    height: 4em;
+    padding: 1em;
+}
+
+.main-content > div {
+    margin-top: 10px;
+}
+
+.pagination>li>a, .pagination>li>span {
+    color: inherit;
+}
