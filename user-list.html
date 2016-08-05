@@ -17,8 +17,8 @@
 
 <div class="container">
     <div class="col-xs-12">
-        <div class="main-content text-center">
-            <div class="header col-xs-12">
+        <div class="main-content">
+            <div class="header col-xs-12 text-center">
                 <div class="logo col-xs-12">
                     <div class="logo col-xs-12">
                         <span class="icon-dyna-logo fa-4x"></span>
@@ -42,11 +42,39 @@
                 </a>
             </div>
             <div class="content col-xs-12">
-                <div class="list-users-menu col-xs-12">
-                    <a class="btn btn-default pull-right">
-                        <i class="fa fa-user-plus fa-2x"></i>
-                        <span>Novo usuário</span>
-                    </a>
+                <div class="list-users-menu">
+                    <span class="col-md-12">
+                        <a class="btn btn-default pull-left" data-toggle="collapse" href="#collapseFilter">
+                            <i class="fa fa-search fa-2x fa-flip-horizontal"></i>
+                        </a>
+                        <a class="btn btn-default col-md-2 pull-right">
+                            <i class="fa fa-user-plus fa-2x"></i>
+                            <span>Novo usuário</span>
+                        </a>
+                    </span>
+
+                    <div class="collapse col-md-12" id="collapseFilter">
+                        <div class="filter-panel well well-sm col-xs-12">
+                            <h3 class="text-left">Filtros</h3>
+                            <form>
+                                <div class="form-group col-xs-6">
+                                    <label for="nomeFiltro"><i class="fa fa-user"></i>Nome</label>
+                                    <input type="text" class="form-control" id="nomeFiltro"
+                                           placeholder="Nome">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="grupoFiltro"><i class="fa fa-users"></i>Grupo</label>
+                                    <select class="form-control" id="grupoFiltro">
+                                        <option selected>Selecione...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <input type="checkbox" checked id="ativoFiltro">
+                                    <label for="ativoFiltro">Ativo</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="list-users col-xs-12">
                     <div class="table-responsive">
@@ -73,7 +101,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <nav>
+                    <nav class="text-center">
                         <ul class="pagination">
                             <li>
                                 <a href="#" aria-label="Previous">
@@ -124,6 +152,15 @@
         margin-top: 20px;
     }
 
+    .filter-panel {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .content > div {
+        margin-top: 20px;
+    }
+
     .list-users-menu {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -133,6 +170,8 @@
         font-size: 1.3em;
         color: green;
     }
+
+
 </style>
 
 </body>

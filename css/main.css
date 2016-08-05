@@ -21,6 +21,39 @@
     margin-top: 10px;
 }
 
-.pagination>li>a, .pagination>li>span {
+.pagination > li > a, .pagination > li > span {
     color: inherit;
+}
+
+.table-bordered > tbody > tr > td:first-child, .table-bordered > tbody > tr > th:first-child, .table-bordered > tfoot > tr > td:first-child, .table-bordered > tfoot > tr > th:first-child, .table-bordered > thead > tr > td:first-child, .table-bordered > thead > tr > th:first-child {
+    border-left: 0px;
+}
+
+.table-bordered > tbody > tr > td:last-child, .table-bordered > tbody > tr > th:last-child, .table-bordered > tfoot > tr > td:last-child, .table-bordered > tfoot > tr > th:last-child, .table-bordered > thead > tr > td:last-child, .table-bordered > thead > tr > th:last-child {
+    border-right: 0px;
+}
+
+.table-bordered {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc
+}
+
+.filter-panel h1, .filter-panel h2, .filter-panel h3 {
+    margin-top: 0px;
+    color: green;
+}
+
+.btn-default:hover {
+    background-color: #f6f6f6;
+}
+
+tfoot {
+    font-weight: 600;
+}
+
+.filter-panel .form-group .fa {
+    color: #ccc;
+    margin-right: 5px;
 }
