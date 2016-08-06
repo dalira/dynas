@@ -49,6 +49,10 @@ a:hover, a:hover, a:focus {
     color: green;
 }
 
+.menu {
+    margin-top: 20px;
+}
+
 .menu .btn:hover {
     background-color: #f6f6f6;
 }
@@ -95,3 +99,22 @@ tfoot {
     background-color: white;
 }
 
+.btn-menu {
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.btn-menu.active {
+    color: green;
+    background-color: inherit;
+    border-color: inherit;
+    background-image: inherit;
+    outline: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-table-option {
+    font-size: 1.3em;
+    color: green;
+}
