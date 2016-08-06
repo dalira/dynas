@@ -1,6 +1,5 @@
-.main-content .logo > * {
-    font-weight: 900;
-    color: green;
+a:hover, a:hover, a:focus {
+    text-decoration: none;
 }
 
 .input-group-addon {
@@ -10,6 +9,11 @@
 
 * {
     border-radius: 0px !important;
+}
+
+.main-content .logo > * {
+    font-weight: 900;
+    color: green;
 }
 
 .main-content .buttons a.btn {
@@ -45,8 +49,12 @@
     color: green;
 }
 
-.btn-default:hover {
+.menu .btn:hover {
     background-color: #f6f6f6;
+}
+
+.btn, .btn:hover, .btn:focus {
+    background-color: transparent;
 }
 
 tfoot {
@@ -57,3 +65,33 @@ tfoot {
     color: #ccc;
     margin-right: 5px;
 }
+
+.panel-group {
+    border: 0px;
+}
+
+.panel-group .panel {
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+.panel-group .panel-heading {
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    background-color: white;
+}
+
+.panel-title {
+    color: green;
+}
+
+.fa-1-5 {
+    font-size: 1.5em;
+}
+
+.btn-action, .btn-action:hover, .btn-action:focus {
+    border-color: green;
+    color: green;
+    background-color: white;
+}
+
