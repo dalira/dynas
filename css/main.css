@@ -44,9 +44,12 @@ a:hover, a:hover, a:focus {
     border-bottom: 2px solid #ccc
 }
 
+h1, h2, h3 {
+    color: green;
+}
+
 .filter-panel h1, .filter-panel h2, .filter-panel h3 {
     margin-top: 0px;
-    color: green;
 }
 
 .menu {
@@ -63,11 +66,6 @@ a:hover, a:hover, a:focus {
 
 tfoot {
     font-weight: 600;
-}
-
-.filter-panel .form-group .fa {
-    color: #ccc;
-    margin-right: 5px;
 }
 
 .panel-group {
@@ -117,4 +115,27 @@ tfoot {
 .btn-table-option {
     font-size: 1.3em;
     color: green;
+}
+
+.pagination {
+    color: green;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    color: white;
+    background-color: green;
+    border-color: green;
+}
+
+.btn-reject, .btn-reject:focus, .btn-reject:hover {
+    color: red;
+}
+
+form.ng-submitted .ng-invalid {
+    border: 2px solid rgba(255,0,0,0.5);
+}
+
+span.input-group-addon {
+    max-width: 40px;
+    min-width: 40px;
 }
