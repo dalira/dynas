@@ -2,6 +2,8 @@ angular.module('dynas')
     .controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'GroupService', 'blockUI',
         function ($scope, $uibModal, SprintService, GroupService, blockUI) {
 
+            var panelSprintBlock = blockUI.instances.get('panel-sprints');
+
             //Filtros
             $scope.showFilter = false;
             $scope.groups = [];
@@ -14,20 +16,20 @@ angular.module('dynas')
             $scope.query = function () {
                 var promisePage = SprintService.query($scope.filter, $scope.currentPage);
 
-                var panelSprintBlock = blockUI.instances.get('panel-sprints');
                 panelSprintBlock.start();
 
-                promisePage.then(function (page) {
-                    $scope.currentPage = page.currentPage;
-                    $scope.totalItems = page.totalItems;
-                    $scope.sprints = page.items;
+                promisePage
+                    .then(function (page) {
+                        $scope.currentPage = page.currentPage;
+                        $scope.totalItems = page.totalItems;
+                        $scope.sprints = page.items;
 
-                    //panelSprintBlock.stop();
-                });
-
-                promisePage.catch(function () {
-
-                });
+                        panelSprintBlock.stop();
+                        //TODO: Notificar sucesso
+                    })
+                    .catch(function () {
+                        //TODO: Tratar erros
+                    });
             };
 
             $scope.limparFiltros = function () {
@@ -68,7 +70,23 @@ angular.module('dynas')
                 });
 
                 modalInstance.result.then(function (sprint) {
-                    console.log(sprint);
+                    panelSprintBlock.start();
+
+                    var promise;
+                    if (onEdition) {
+                        promise = SprintService.save(sprint);
+                    } else {
+                        promise = SprintService.create(sprint);
+                    }
+
+                    promise
+                        .then(function () {
+                            $scope.query();
+                            panelSprintBlock.stop();
+                        })
+                        .catch(function () {
+                            //TODO: Tratar erro
+                        });
                 });
             };
 

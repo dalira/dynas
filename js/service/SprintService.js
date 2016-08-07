@@ -9,18 +9,20 @@ angular.module('dynas')
             totalItems: 2,
             items: [
                 {
-                    'name': 'Stairway to Heaven',
-                    'begin': new Date(),
-                    'end': new Date(),
-                    'group': {'name': 'Relacionamento'},
-                    'value': '1000'
+                    id: 1,
+                    name: 'Stairway to Heaven',
+                    begin: new Date(),
+                    end: new Date(),
+                    group: {'name': 'Relacionamento'},
+                    value: '1000'
                 },
                 {
-                    'name': 'Back in Black',
-                    'begin': new Date(),
-                    'end': new Date(),
-                    'group': {'name': 'Relacionamento'},
-                    'value': '500'
+                    id: 2,
+                    name: 'Back in Black',
+                    begin: new Date(),
+                    end: new Date(),
+                    group: {'name': 'Relacionamento'},
+                    value: '500'
                 }
             ]
         };
@@ -36,11 +38,29 @@ angular.module('dynas')
         };
 
         service.create = function (sprint) {
-            sprint;
+            var def = $q.defer();
+
+            setTimeout(function () {
+                dummyValue.items.push(sprint);
+                dummyValue.totalItems = dummyValue.totalItems + 1;
+
+                def.resolve();
+            }, 2000);
+
+            return def.promise;
         };
 
-        service.edit = function (sprint) {
-            sprint;
+        service.save = function (sprint) {
+            var def = $q.defer();
+
+            setTimeout(function () {
+                var index = dummyValue.items.findIndex(function (s) {
+                    return s.id === sprint.id;
+                });
+                dummyValue.items[index] = sprint;
+            }, 2000);
+
+            return def.promise;
         };
 
         return service;
