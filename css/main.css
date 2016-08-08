@@ -1,6 +1,5 @@
-.main-content .logo > * {
-    font-weight: 900;
-    color: green;
+a:hover, a:hover, a:focus {
+    text-decoration: none;
 }
 
 .input-group-addon {
@@ -10,6 +9,11 @@
 
 * {
     border-radius: 0px !important;
+}
+
+.main-content .logo > * {
+    font-weight: 900;
+    color: green;
 }
 
 .main-content .buttons a.btn {
@@ -40,20 +44,98 @@
     border-bottom: 2px solid #ccc
 }
 
-.filter-panel h1, .filter-panel h2, .filter-panel h3 {
-    margin-top: 0px;
+h1, h2, h3 {
     color: green;
 }
 
-.btn-default:hover {
+.filter-panel h1, .filter-panel h2, .filter-panel h3 {
+    margin-top: 0px;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu .btn:hover {
     background-color: #f6f6f6;
+}
+
+.btn, .btn:hover, .btn:focus {
+    background-color: transparent;
 }
 
 tfoot {
     font-weight: 600;
 }
 
-.filter-panel .form-group .fa {
-    color: #ccc;
-    margin-right: 5px;
+.panel-group {
+    border: 0px;
+}
+
+.panel-group .panel {
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+.panel-group .panel-heading {
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    background-color: white;
+}
+
+.panel-title {
+    color: green;
+}
+
+.fa-1-5 {
+    font-size: 1.5em;
+}
+
+.btn-action, .btn-action:hover, .btn-action:focus {
+    border-color: green;
+    color: green;
+    background-color: white;
+}
+
+.btn-menu {
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.btn-menu.active {
+    color: green;
+    background-color: inherit;
+    border-color: inherit;
+    background-image: inherit;
+    outline: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn-table-option {
+    font-size: 1.3em;
+    color: green;
+}
+
+.pagination {
+    color: green;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    color: white;
+    background-color: green;
+    border-color: green;
+}
+
+.btn-reject, .btn-reject:focus, .btn-reject:hover {
+    color: red;
+}
+
+form.ng-submitted .ng-invalid {
+    border: 2px solid rgba(255,0,0,0.5);
+}
+
+span.input-group-addon {
+    max-width: 40px;
+    min-width: 40px;
 }
