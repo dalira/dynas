@@ -75,7 +75,7 @@ angular.module('dynas')
                 });
 
                 modalInstance.result.then(function (user) {
-                    panelSprintBlock.start();
+                    panelUserBlock.start();
 
                     var promise;
                     if (onEdition) {
@@ -87,7 +87,7 @@ angular.module('dynas')
                     promise
                         .then(function () {
                             $scope.query();
-                            panelSprintBlock.stop();
+                            panelUserBlock.stop();
                         })
                         .catch(function () {
                             //TODO: Tratar erro

@@ -54,7 +54,7 @@
                 <tr>
                     <th class="col-xs-5">Usuário</th>
                     <th class="col-xs-3">Grupo</th>
-                    <th class="col-xs-1">Ativo</th>
+                    <th class="col-xs-1 text-center">Ativo</th>
                     <th class="col-xs-2"></th>
                 </tr>
                 </thead>
@@ -62,7 +62,8 @@
                 <tr ng-repeat="user in users">
                     <td>{{user.name}}</td>
                     <td>{{user.group.name}}</td>
-                    <td><input type="checkbox" ng-model="user.active"></td>
+                    <td class="text-center"><i class="fa"
+                                               ng-class="user.active ? 'fa-check-square-o' : 'fa-square-o'"></i></td>
                     <td>
                         <span class="pull-right">
                         <a class="btn btn-link btn-table-option" ng-click="editUser(user)"><i class="fa fa-pencil"></i></a>
