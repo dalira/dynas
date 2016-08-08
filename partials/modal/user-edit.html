@@ -1,30 +1,36 @@
 <div class="modal-header">
-    <h3 class="modal-title">{{onEdition ? 'Editar' : 'Criar'}} Sprint</h3>
+    <h3 class="modal-title">{{onEdition ? 'Editar' : 'Criar'}} Usuário</h3>
 </div>
 
-<form name="sprintEditForm" novalidate>
+<form name="userEditForm" novalidate>
     <div class="modal-body">
         <div class="form-group col-xs-6">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-undo"></i></span>
-                <input name="sprintName" type="text" class="form-control" id="nomeSprint" placeholder="Nome da Sprint"
-                       ng-model="sprint.name" required="true">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input name="sprintName" type="text" class="form-control" id="nomeSprint" placeholder="Nome do Usuário"
+                       ng-model="user.name" required="true">
             </div>
         </div>
         <div class="form-group col-xs-6">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input name="sprintBegin" type="date" class="form-control" placeholder="Data Inicial"
-                       ng-model="sprint.begin" required="true">
+                <span class="input-group-addon"><i class="fa fa-at"></i></span>
+                <input name="email" type="text" class="form-control" placeholder="Email do Usuário"
+                       ng-model="user.email" required="true">
             </div>
         </div>
         <div class="form-group col-xs-6">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                <select name="sprintGroup" class="form-control" ng-model="sprint.group" required="true"
+                <select name="sprintGroup" class="form-control" ng-model="user.group" required="true"
                         ng-options="group as group.name for group in groups track by group.id">
                     <option class="placeholder" value="">Grupo...</option>
                 </select>
+            </div>
+        </div>
+        <div class="form-group col-xs-6">
+            <div class="input-group">
+                <input type="checkbox" id="userActive" ng-model="user.active">
+                <label for="userActive">Ativo</label>
             </div>
         </div>
         <span class="clearfix"></span>

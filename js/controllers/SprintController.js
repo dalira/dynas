@@ -14,9 +14,10 @@ angular.module('dynas')
             };
 
             $scope.query = function () {
-                var promisePage = SprintService.query($scope.filter, $scope.currentPage);
 
                 panelSprintBlock.start();
+
+                var promisePage = SprintService.query($scope.filter, $scope.currentPage);
 
                 promisePage
                     .then(function (page) {
@@ -64,7 +65,7 @@ angular.module('dynas')
                     size: 'lg',
                     backdrop: 'static',
                     resolve: {
-                        sprint: sprint,
+                        sprint: angular.copy(sprint),
                         onEdition: onEdition
                     }
                 });

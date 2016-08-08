@@ -2,15 +2,16 @@ angular.module('dynas')
     .factory('GroupService', [function () {
         var service = {};
 
+        //Cachear
         service.get = function () {
             return [
                 {
                     'id': 1,
-                    'name': 'Stairway to Heaven'
+                    'name': 'Relacionamento'
                 },
                 {
                     'id': 2,
-                    'name': 'Back in Black'
+                    'name': 'Credenciamento'
                 }
             ]
         };

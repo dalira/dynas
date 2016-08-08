@@ -1,5 +1,5 @@
 angular.module('dynas')
-    .factory('SprintService', ['$q', function ($q) {
+    .factory('UserService', ['$q', function ($q) {
         var service = {};
 
         const regPerPage = 20;
@@ -10,25 +10,30 @@ angular.module('dynas')
             items: [
                 {
                     id: 1,
-                    name: 'Stairway to Heaven',
-                    begin: new Date(),
-                    end: new Date(),
+                    name: 'Diego',
+                    active: true,
                     group: {
                         id: 1,
                         name: 'Relacionamento'
-                    },
-                    value: '1000'
+                    }
                 },
                 {
                     id: 2,
-                    name: 'Back in Black',
-                    begin: new Date(),
-                    end: new Date(),
+                    name: 'André',
+                    active: false,
+                    group: {
+                        id: 2,
+                        name: 'Credenciamento'
+                    }
+                },
+                {
+                    id: 3,
+                    name: 'Lira',
+                    active: true,
                     group: {
                         id: 1,
                         name: 'Relacionamento'
-                    },
-                    value: '500'
+                    }
                 }
             ]
         };

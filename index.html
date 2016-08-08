@@ -16,7 +16,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/helper-class.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }">
 
 <div class="container">
     <div class="col-xs-12">
@@ -54,6 +54,7 @@
 <script src="js/service/RoutesService.js"></script>
 <script src="js/service/SprintService.js"></script>
 <script src="js/service/GroupService.js"></script>
+<script src="js/service/UserService.js"></script>
 
 <!--Controller-->
 <script src="js/controllers/PluginController.js"></script>
@@ -65,6 +66,7 @@
 
 <!--Modais-->
 <script src="js/controllers/modal/SprintEditionController.js"></script>
+<script src="js/controllers/modal/UserEditionController.js"></script>
 
 
 </body>

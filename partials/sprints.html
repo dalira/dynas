@@ -46,9 +46,10 @@
                         <div class="form-group col-xs-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control" id="grupoFiltro" ng-model="filter.group" ng-change="query()">
-                                    <option class="placeholder" value="{{null}}">Grupo...</option>
-                                    <option ng-repeat="group in groups" value="{{group.id}}">{{group.name}}</option>
+                                <select class="form-control" id="grupoFiltro" ng-model="filter.group"
+                                        ng-change="query()"
+                                        ng-options="group as group.name for group in groups track by group.id">
+                                    <option class="placeholder" value="">Grupo...</option>
                                 </select>
                             </div>
                         </div>
