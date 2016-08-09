@@ -1,82 +1,60 @@
 <link href="css/configuration.css" rel="stylesheet" type="text/css">
 
 <div class="content col-xs-12">
-    <div class="panel-group" id="accordion" role="tablist">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion"
-                       href="#valoresDefaultPanel">
-                        Valores Default
-                    </a>
-                </h4>
-            </div>
-            <div id="valoresDefaultPanel" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body">
-                    <form>
-                        <div class="form-group col-xs-3">
-                            <label for="valorInicialSprintDefault">Valor inicial sprint</label>
-                            <input id="valorInicialSprintDefault" class="form-control">
-                        </div>
-                        <div class="form-group col-xs-3">
-                            <label for="duracaoSprintDefault">Duração da sprint</label>
-                            <select id="duracaoSprintDefault" class="form-control">
-                                <option selected>Selecione...</option>
-                                <option>Mensal</option>
-                                <option>Semanal</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion"
-                       href="#gruposPanel">
-                        Grupos
-                    </a>
-                </h4>
-            </div>
-            <div id="gruposPanel" class="panel-collapse collapse" role="tabpanel">
-                <div class="panel-body">
 
-                    <div>
-                        <div class="list-groups-menu col-xs-12">
-                            <a class="btn btn-default btn-action col-md-2 pull-right">
-                                <i class="fa fa-plus fa-1-5"></i>
-                                <span>Novo Grupo</span>
-                            </a>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered col-xs-12">
-                                    <thead>
-                                    <tr>
-                                        <th>Grupo</th>
-                                        <th>Ativo</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Relacionamento</td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td>
+    <uib-tabset justified="false">
+        <uib-tab index="0" heading="Valores Default">
+            <form>
+                <div class="form-group col-xs-3">
+                    <label for="valorInicialSprintDefault">Valor inicial sprint</label>
+                    <input id="valorInicialSprintDefault" class="form-control">
+                </div>
+                <div class="form-group col-xs-3">
+                    <label for="duracaoSprintDefault">Duração da sprint</label>
+                    <select id="duracaoSprintDefault" class="form-control">
+                        <option selected>Selecione...</option>
+                        <option>Mensal</option>
+                        <option>Semanal</option>
+                    </select>
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="1" heading="Grupos">
+            <div>
+                <div class="list-groups-menu col-xs-12">
+                    <a class="btn btn-default btn-action col-md-2 pull-right">
+                        <i class="fa fa-plus fa-1-5"></i>
+                        <span>Novo Grupo</span>
+                    </a>
+                </div>
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered col-xs-12">
+                            <thead>
+                            <tr>
+                                <th>Grupo</th>
+                                <th>Ativo</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Relacionamento</td>
+                                <td><input type="checkbox" checked></td>
+                                <td>
                                                 <span class="pull-right">
                                                     <a class="btn btn-link btn-table-option"><i
                                                             class="fa fa-pencil"></i></a>
                                                 </span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </uib-tab>
+    </uib-tabset>
+
+
 </div>
