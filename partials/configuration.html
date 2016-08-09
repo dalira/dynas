@@ -3,26 +3,38 @@
 <div class="content col-xs-12">
 
     <uib-tabset justified="false">
-        <uib-tab index="0" heading="Valores Default">
+        <uib-tab index="0" heading="Valores Default" select="loadConfig()">
             <form>
-                <div class="form-group col-xs-3">
-                    <label for="valorInicialSprintDefault">Valor inicial sprint</label>
-                    <input id="valorInicialSprintDefault" class="form-control">
-                </div>
-                <div class="form-group col-xs-3">
-                    <label for="duracaoSprintDefault">Duração da sprint</label>
-                    <select id="duracaoSprintDefault" class="form-control">
-                        <option selected>Selecione...</option>
-                        <option>Mensal</option>
-                        <option>Semanal</option>
-                    </select>
+                <div class="col-md-12" block-ui="panel-configuration">
+                    <div class="form-group col-xs-3">
+                        <label for="valorInicialSprintDefault">Valor inicial sprint</label>
+                        <input id="valorInicialSprintDefault" class="form-control"
+                               ng-model="configuration.initialValue">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <label for="duracaoSprintDefault">Duração da sprint</label>
+                        <select id="duracaoSprintDefault" class="form-control" ng-model="configuration.duration">
+                            <option>Selecione...</option>
+                            <option value="MENSAL">Mensal</option>
+                            <option value="SEMANAL">Semanal</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12" ng-show="showCommands()">
+                        <span class="pull-right">
+                            <input type="submit" class="btn btn-default btn-action" type="button" ng-click="save()"
+                                   value="Salvar">
+                            <button class="btn btn-default btn-reject" type="button" ng-click="cancel()">
+                                Cancelar
+                            </button>
+                        </span>
+                    </div>
                 </div>
             </form>
         </uib-tab>
-        <uib-tab index="1" heading="Grupos">
-            <div>
+        <uib-tab index="1" heading="Grupos" select="loadGroups()">
+            <div class="col-xs-12 padding-10" block-ui="panel-group">
                 <div class="list-groups-menu col-xs-12">
-                    <a class="btn btn-default btn-action col-md-2 pull-right">
+                    <a class="btn btn-default btn-action col-md-2 pull-right" ng-click="newGroup()">
                         <i class="fa fa-plus fa-1-5"></i>
                         <span>Novo Grupo</span>
                     </a>
@@ -32,20 +44,22 @@
                         <table class="table table-striped table-bordered col-xs-12">
                             <thead>
                             <tr>
-                                <th>Grupo</th>
-                                <th>Ativo</th>
-                                <th></th>
+                                <th class="col-xs-9">Grupo</th>
+                                <th class="col-xs-2">Ativo</th>
+                                <th class="col-xs-1"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Relacionamento</td>
-                                <td><input type="checkbox" checked></td>
+                            <tr ng-repeat="group in groups">
+                                <td>{{group.name}}</td>
+                                <td><i class="fa"
+                                       ng-class="group.active ? 'fa-check-square-o' : 'fa-square-o'"></i>
+                                </td>
                                 <td>
-                                                <span class="pull-right">
-                                                    <a class="btn btn-link btn-table-option"><i
-                                                            class="fa fa-pencil"></i></a>
-                                                </span>
+                                    <span class="pull-right">
+                                        <a class="btn btn-link btn-table-option" ng-click="editGroup(group)"><i
+                                                class="fa fa-pencil"></i></a>
+                                    </span>
                                 </td>
                             </tr>
                             </tbody>
@@ -55,6 +69,4 @@
             </div>
         </uib-tab>
     </uib-tabset>
-
-
 </div>

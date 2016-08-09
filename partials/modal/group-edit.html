@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{onEdition ? 'Editar' : 'Criar'}} Sprint</h3>
+</div>
+
+<form name="groupEditForm" novalidate>
+    <div class="modal-body">
+        <div class="form-group col-xs-6">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                <input name="groupName" type="text" class="form-control" id="nomeSprint" placeholder="Nome do Grupo"
+                       ng-model="group.name" required="true">
+            </div>
+        </div>
+        <div class="form-group col-xs-6">
+            <div class="input-group">
+                <input type="checkbox" id="groupActive" ng-model="group.active">
+                <label for="groupActive">Ativo</label>
+            </div>
+        </div>
+        <span class="clearfix"></span>
+    </div>
+
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-default btn-action" type="button" ng-click="ok()"
+               value="{{onEdition ? 'Salvar' : 'Criar'}}">
+        <button class="btn btn-default btn-reject" type="button" ng-click="cancel()">
+            Cancelar
+        </button>
+    </div>
+</form>

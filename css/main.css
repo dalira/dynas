@@ -139,3 +139,13 @@ span.input-group-addon {
     max-width: 40px;
     min-width: 40px;
 }
+
+.nav.nav-tabs li a {
+    color: green;
+    font-weight: 600;
+}
+
+.nav.nav-tabs li a {
+    color: green;
+    font-weight: 600;
+}
