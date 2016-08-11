@@ -2,12 +2,35 @@ body, html {
     min-width: 300px;
     width: 300px;
     max-width: 300px;
-
-    min-height: 100px;
-    height: 100px;
-    max-height: 100px;
 }
+
 
 .values {
     width: 100%;
+}
+
+.container {
+    padding: 20px 0px;
+    padding: 0px;
+    height: 300px;
+}
+
+.buttons {
+    padding: 0px;
+}
+
+.buttons .div:first-child {
+    padding-right: 0px;
+}
+
+.buttons .div:last-child {
+    padding-left: 0px;
+}
+
+.sprint {
+    margin-bottom: 10px;
+}
+
+.buttons, .values {
+    margin-top: 10px;
 }

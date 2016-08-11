@@ -1,0 +1,33 @@
+.main-content .bank {
+    font-size: 1.5em;
+    border-bottom: 1px solid lightgray;
+}
+
+.main-content .income {
+    font-size: 1.3em;
+}
+
+.send-info > div {
+    padding-top: 10px;
+}
+
+.send-info-value > * {
+    z-index: 9999;
+}
+
+.send-info .bill {
+    transform: rotate(90deg);
+    top: -10px;
+    z-index: 0;
+    font-weight: 900;
+    border-radius: 4px !important;
+}
+
+.send-info .bill .icon-dyna-logo {
+    font-weight: 900;
+    font-size: 1.7em;
+}
+
+.question-info > div {
+    padding-top: 10px;
+}
