@@ -2,7 +2,7 @@ angular.module('dynas')
     .config( function ($routeProvider) {
         $routeProvider
             .when('/plugin', {
-                templateUrl: 'partials/plugin.html',
+                templateUrl: 'partials/popup.html',
                 controller: 'PluginController'
             })
             .when('/sprints', {
