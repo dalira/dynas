@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9e83635-57f5-48d8-af6b-7988e62e827f" name="Default" comment="Inicio do plugin">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/plugin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/partials/plugin/question-info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/partials/plugin/send-info.html" />
+    <list default="true" id="c9e83635-57f5-48d8-af6b-7988e62e827f" name="Default" comment="Plugin">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/popup.css" afterPath="$PROJECT_DIR$/css/popup.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/config/routes.js" afterPath="$PROJECT_DIR$/js/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/PluginController.js" afterPath="$PROJECT_DIR$/js/controllers/PluginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/plugin.html" afterPath="$PROJECT_DIR$/partials/plugin.html" />
     </list>
     <ignored path="dynas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/partials/plugin.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -621,7 +614,7 @@
       <workItem from="1470695512887" duration="1038000" />
       <workItem from="1470778434342" duration="5890000" />
       <workItem from="1470861451803" duration="8269000" />
-      <workItem from="1470950853212" duration="5213000" />
+      <workItem from="1470950853212" duration="5240000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da tela de sprints">
       <created>1470442478451</created>
@@ -651,15 +644,22 @@
       <option name="project" value="LOCAL" />
       <updated>1470874065311</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Plugin">
+      <created>1470956962023</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1470956962023</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81493000" />
+    <option name="totallyTimeSpent" value="81520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -706,7 +706,8 @@
     <MESSAGE value="Ajustes no input de checkbox" />
     <MESSAGE value="Passagem da tela de configuração para angular" />
     <MESSAGE value="Inicio do plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio do plugin" />
+    <MESSAGE value="Plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plugin" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1055,7 +1056,7 @@
     <entry file="file://$PROJECT_DIR$/partials/plugin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding />
         </state>
       </provider>
