@@ -1,4 +1,11 @@
 angular.module('dynas')
+
+    .constant('sprintRoute', "/sprints")
+    .constant('userRoute', "/users")
+    .constant('transactionRoute', "/transactions")
+    .constant('configurationRoute', "/configuration")
+    .constant('loginRoute', "/login")
+
     .config( function ($routeProvider) {
         $routeProvider
             .when('/plugin', {
@@ -19,5 +26,12 @@ angular.module('dynas')
             .when('/users', {
                 templateUrl: 'partials/users.html',
                 controller: 'UserController'
+            })
+            .when('/login', {
+                templateUrl: 'partials/login.html',
+                controller: 'LoginController'
+            })
+            .otherwise({
+                redirectTo: '/login'
             });
     });

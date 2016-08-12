@@ -1,0 +1,20 @@
+.icon-dyna-logo {
+    font-size: 6em;
+}
+
+.btn, .btn:hover, .btn:focus {
+    color: white;
+    background-color: green;
+    border: none;
+    font-size: 1.2em;
+}
+
+.btn-link, .btn-link:hover, .btn-link:focus {
+    color: gray;
+    text-decoration: none;
+    cursor: hand;
+}
+
+input.ng-invalid {
+    border: 2px solid red;
+}

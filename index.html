@@ -22,13 +22,14 @@
 <div class="container">
     <div class="col-xs-12">
         <div class="main-content ">
+
             <div class="header col-xs-12 text-center">
                 <div class="logo col-xs-12">
                     <span class="icon-dyna-logo fa-4x"></span>
                 </div>
             </div>
 
-            <ng-include src="'partials/menu.html'"></ng-include>
+            <ng-include src="'partials/menu.html'" ></ng-include>
 
             <div ng-view></div>
 
@@ -52,12 +53,13 @@
 <script src="js/config/block-ui-config.js"></script>
 
 <!--Service-->
-<script src="js/service/RoutesService.js"></script>
+<script src="js/service/RouteService.js"></script>
 <script src="js/service/SprintService.js"></script>
 <script src="js/service/GroupService.js"></script>
 <script src="js/service/UserService.js"></script>
 <script src="js/service/TransactionService.js"></script>
 <script src="js/service/ConfigurationService.js"></script>
+<script src="js/service/LoginService.js"></script>
 
 <!--Controller-->
 <script src="js/controllers/PluginController.js"></script>
@@ -66,6 +68,7 @@
 <script src="js/controllers/ConfigurationController.js"></script>
 <script src="js/controllers/UserController.js"></script>
 <script src="js/controllers/MenuController.js"></script>
+<script src="js/controllers/LoginController.js"></script>
 
 <!--Modais-->
 <script src="js/controllers/modal/SprintEditionController.js"></script>

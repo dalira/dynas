@@ -1,19 +1,32 @@
 <div class="menu col-xs-12" ng-controller="MenuController">
-    <a class="btn btn-default btn-menu col-xs-3" ng-class="isSprintScreenActive() ? 'active' : ''" ng-click="toSprintScreen()">
-        <span class="fa fa-undo fa-2x"></span>
-        <span>Sprints</span>
-    </a>
-    <a class="btn btn-default btn-menu col-xs-3" ng-class="isUserScreenActive() ? 'active' : ''" ng-click="toUserScreen()">
-        <span class="fa fa-users fa-2x"></span>
-        <span>Usuários</span>
-    </a>
-    <a class="btn btn-default btn-menu col-xs-3" ng-class="isTransactionScreenActive() ? 'active' : ''" ng-click="toTransactionScreen()">
-        <span class="fa fa-long-arrow-up fa-2x"></span>
-        <span class="fa fa-long-arrow-down fa-2x"></span>
-        <span>Transações</span>
-    </a>
-    <a class="btn btn-default btn-menu col-xs-3" ng-class="isConfigurationScreenActive() ? 'active' : ''" ng-click="toConfigurationScreen()">
-        <span class="fa fa-cog fa-2x"></span>
-        <span>Configurações</span>
-    </a>
+
+    <div class="menu col-xs-12">
+        <span class="pull-right">
+            {{identity.name}}
+        </span>
+    </div>
+
+    <span ng-if="showMenu()">
+        <a class="btn btn-default btn-menu col-xs-3" ng-class="isSprintScreenActive() ? 'active' : ''"
+           ng-click="toSprintScreen()">
+            <span class="fa fa-undo fa-2x"></span>
+            <span>Sprints</span>
+        </a>
+        <a class="btn btn-default btn-menu col-xs-3" ng-class="isUserScreenActive() ? 'active' : ''"
+           ng-click="toUserScreen()">
+            <span class="fa fa-users fa-2x"></span>
+            <span>Usuários</span>
+        </a>
+        <a class="btn btn-default btn-menu col-xs-3" ng-class="isTransactionScreenActive() ? 'active' : ''"
+           ng-click="toTransactionScreen()">
+            <span class="fa fa-long-arrow-up fa-2x"></span>
+            <span class="fa fa-long-arrow-down fa-2x"></span>
+            <span>Transações</span>
+        </a>
+        <a class="btn btn-default btn-menu col-xs-3" ng-class="isConfigurationScreenActive() ? 'active' : ''"
+           ng-click="toConfigurationScreen()">
+            <span class="fa fa-cog fa-2x"></span>
+            <span>Configurações</span>
+        </a>
+    </span>
 </div>
