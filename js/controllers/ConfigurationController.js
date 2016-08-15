@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('ConfigurationController', ['$scope', '$uibModal', 'blockUI', 'ConfigurationService', 'GroupService',
+app.controller('ConfigurationController', ['$scope', '$uibModal', 'blockUI', 'ConfigurationService', 'GroupService',
         function ($scope, $uibModal, blockUI, ConfigurationService, GroupService) {
 
             var panelConfigurationBlock = blockUI.instances.get('panel-configuration');

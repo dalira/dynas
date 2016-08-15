@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('TransactionController', ['$scope', '$uibModal', 'blockUI', 'TransactionService',
+app.controller('TransactionController', ['$scope', '$uibModal', 'blockUI', 'TransactionService',
         function ($scope, $uibModal, blockUI, TransactionService) {
 
             var panelTransactionBlock = blockUI.instances.get('panel-transactions');

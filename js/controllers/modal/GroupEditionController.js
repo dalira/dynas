@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('GroupEditionController', ['$scope', '$uibModalInstance', 'GroupService', 'group', 'onEdition',
+app.controller('GroupEditionController', ['$scope', '$uibModalInstance', 'GroupService', 'group', 'onEdition',
         function ($scope, $uibModalInstance, GroupService, group, onEdition) {
 
             $scope.group = group;

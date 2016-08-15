@@ -1,0 +1,8 @@
+<div class="user-menu" ng-controller="UserMenuController">
+    <div ng-if="showMenu()">
+        <span class="pull-right">
+            {{identity().name}}
+            <a class="logout" ng-click="logOut()"><span class="fa fa-sign-out"></span></a>
+        </span>
+    </div>
+</div>

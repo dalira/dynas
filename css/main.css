@@ -149,3 +149,13 @@ span.input-group-addon {
     color: green;
     font-weight: 600;
 }
+
+.user-menu {
+    position: absolute;
+    right: 10px;
+}
+
+.logout {
+    color: green;
+    cursor: hand;
+}

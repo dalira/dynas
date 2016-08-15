@@ -1,13 +1,6 @@
-angular.module('dynas')
-    .factory('RouteService', ['sprintRoute', 'userRoute', 'transactionRoute', 'configurationRoute', 'loginRoute', '$location',
+app.factory('RouteService', ['sprintRoute', 'userRoute', 'transactionRoute', 'configurationRoute', 'loginRoute', '$location',
         function (sprintRoute, userRoute, transactionRoute, configurationRoute, loginRoute, $location) {
             var service = {};
-
-            const protectedRoutes = [sprintRoute, userRoute, transactionRoute, configurationRoute];
-
-            service.isOnProtectedRoute = function () {
-                return protectedRoutes.indexOf($location.path()) > -1;
-            };
 
             service.isSprintScreenActive = function () {
                 return $location.path() === sprintRoute;
@@ -39,6 +32,10 @@ angular.module('dynas')
 
             service.isConfigurationScreenActive = function () {
                 return $location.path() === configurationRoute;
+            };
+
+            service.toLoginScreen = function () {
+                $location.path(loginRoute);
             };
 
             return service;

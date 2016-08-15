@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('LoginController', ['$scope', 'LoginService', 'RouteService', 'blockUI',
+app.controller('LoginController', ['$scope', 'LoginService', 'RouteService', 'blockUI',
         function ($scope, LoginService, RouteService, blockUI) {
 
             $scope.user = {};

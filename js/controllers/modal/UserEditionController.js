@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('UserEditionController', ['$scope', '$uibModalInstance', 'GroupService', 'user', 'onEdition',
+app.controller('UserEditionController', ['$scope', '$uibModalInstance', 'GroupService', 'user', 'onEdition',
         function ($scope, $uibModalInstance, GroupService, user, onEdition) {
 
             $scope.user = user;

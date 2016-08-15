@@ -9,23 +9,28 @@ angular.module('dynas')
     .config( function ($routeProvider) {
         $routeProvider
             .when('/plugin', {
-                templateUrl: 'partials/plugin.html'
+                templateUrl: 'partials/plugin.html',
+                requireAuth: true
             })
             .when('/sprints', {
                 templateUrl: 'partials/sprints.html',
-                controller: 'SprintController'
+                controller: 'SprintController',
+                requireAuth: true
             })
             .when('/transactions', {
                 templateUrl: 'partials/transactions.html',
-                controller: 'TransactionController'
+                controller: 'TransactionController',
+                requireAuth: true
             })
             .when('/configuration', {
                 templateUrl: 'partials/configuration.html',
-                controller: 'ConfigurationController'
+                controller: 'ConfigurationController',
+                requireAuth: true
             })
             .when('/users', {
                 templateUrl: 'partials/users.html',
-                controller: 'UserController'
+                controller: 'UserController',
+                requireAuth: true
             })
             .when('/login', {
                 templateUrl: 'partials/login.html',

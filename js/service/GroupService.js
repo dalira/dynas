@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .factory('GroupService', ['$q', function ($q) {
+app.factory('GroupService', ['$q', function ($q) {
         var service = {};
 
         var dummyValue = [

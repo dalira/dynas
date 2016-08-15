@@ -1,11 +1,4 @@
 <div class="menu col-xs-12" ng-controller="MenuController">
-
-    <div class="menu col-xs-12">
-        <span class="pull-right">
-            {{identity.name}}
-        </span>
-    </div>
-
     <span ng-if="showMenu()">
         <a class="btn btn-default btn-menu col-xs-3" ng-class="isSprintScreenActive() ? 'active' : ''"
            ng-click="toSprintScreen()">

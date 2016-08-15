@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('SprintEditionController', ['$scope', '$uibModalInstance', 'sprint', 'onEdition',
+app.controller('SprintEditionController', ['$scope', '$uibModalInstance', 'sprint', 'onEdition',
         function ($scope, $uibModalInstance, sprint, onEdition) {
 
             $scope.sprint = sprint;

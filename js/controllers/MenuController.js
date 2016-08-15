@@ -1,8 +1,11 @@
-angular.module('dynas')
-    .controller('MenuController', ['$scope', 'RouteService', function ($scope, RouteService) {
+app.controller('MenuController', ['$scope', 'RouteService',
+    function ($scope, RouteService) {
 
         $scope.showMenu = function () {
-            return RouteService.isOnProtectedRoute();
+            return RouteService.isSprintScreenActive() ||
+                RouteService.isUserScreenActive() ||
+                RouteService.isTransactionScreenActive() ||
+                RouteService.isConfigurationScreenActive();
         };
 
         $scope.toSprintScreen = function () {

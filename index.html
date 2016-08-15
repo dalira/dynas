@@ -29,6 +29,8 @@
                 </div>
             </div>
 
+            <ng-include src="'partials/user-menu.html'" ></ng-include>
+
             <ng-include src="'partials/menu.html'" ></ng-include>
 
             <div ng-view></div>
@@ -50,6 +52,7 @@
 
 <!--Config-->
 <script src="js/config/routes.js"></script>
+<script src="js/config/auth.js"></script>
 <script src="js/config/block-ui-config.js"></script>
 
 <!--Service-->
@@ -68,6 +71,7 @@
 <script src="js/controllers/ConfigurationController.js"></script>
 <script src="js/controllers/UserController.js"></script>
 <script src="js/controllers/MenuController.js"></script>
+<script src="js/controllers/UserMenuController.js"></script>
 <script src="js/controllers/LoginController.js"></script>
 
 <!--Modais-->

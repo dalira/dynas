@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .factory('TransactionService', ['$q', function ($q) {
+app.factory('TransactionService', ['$q', function ($q) {
         var service = {};
 
         const regPerPage = 20;

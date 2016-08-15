@@ -1,8 +1,7 @@
-angular.module('dynas')
-    .controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'GroupService', 'blockUI', 'identity',
-        function ($scope, $uibModal, SprintService, GroupService, blockUI, identity) {
+app.controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'GroupService', 'blockUI', 'LoginService',
+        function ($scope, $uibModal, SprintService, GroupService, blockUI, LoginService) {
 
-            $scope.identity = identity;
+            $scope.identity = LoginService.getCurrentUser();
 
             var panelSprintBlock = blockUI.instances.get('panel-sprints');
 

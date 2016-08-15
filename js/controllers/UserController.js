@@ -1,5 +1,4 @@
-angular.module('dynas')
-    .controller('UserController', ['$scope', '$uibModal', 'blockUI', 'GroupService', 'UserService',
+app.controller('UserController', ['$scope', '$uibModal', 'blockUI', 'GroupService', 'UserService',
         function ($scope, $uibModal, blockUI, GroupService, UserService) {
 
             var panelUserBlock = blockUI.instances.get('panel-users');

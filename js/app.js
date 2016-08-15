@@ -1,1 +1,1 @@
-angular.module('dynas', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'blockUI']);
+var app = angular.module('dynas', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'blockUI']);

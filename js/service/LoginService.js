@@ -1,47 +1,65 @@
-angular.module('dynas')
-    .factory('LoginService', ['$q', '$window', function ($q, $window) {
-        var service = {};
+app.factory('LoginService', ['$q', '$window', 'RouteService', function ($q, $window, RouteService) {
+    var service = {};
 
-        service.isLoggedIn = function () {
-            if ($window.sessionStorage.token) {
-                return true;
-            } else {
-                return false;
-            }
-        };
+    var currentUser;
 
-        service.login = function (user) {
-            var def = $q.defer();
+    //TODO: Obter user quando token estiver em sessão
 
-            setTimeout(function () {
+    service.isLoggedIn = function () {
+        if (currentUser) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-                var usuario = {
-                    username: 'dalira',
-                    name: 'Diego André Lira',
-                    group: {
-                        id: 1,
-                        name: 'Relacionamento'
-                    },
-                    admin: false
-                };
+    service.login = function (user) {
+        var def = $q.defer();
 
-                angular.module('dynas').value('identity', usuario);
+        setTimeout(function () {
 
-                def.resolve(usuario);
-            }, 2000);
+            var usuario = {
+                username: 'dalira',
+                name: 'Diego André Lira',
+                group: {
+                    id: 1,
+                    name: 'Relacionamento'
+                },
+                admin: false
+            };
 
-            return def.promise;
-        };
+            currentUser = usuario;
 
-        service.rememberPassword = function (login) {
-            var def = $q.defer();
+            def.resolve(usuario);
+        }, 2000);
 
-            setTimeout(function () {
-                def.success();
-            }, 2000);
+        return def.promise;
+    };
 
-            return def.promise;
-        };
+    service.logOut = function () {
+        currentUser = null;
+        //TODO: Limpar token
 
-        return service;
-    }]);
+        RouteService.toLoginScreen();
+    };
+
+    service.rememberPassword = function (login) {
+        var def = $q.defer();
+
+        setTimeout(function () {
+            def.success();
+        }, 2000);
+
+        return def.promise;
+    };
+
+    service.getCurrentUser = function () {
+        if (currentUser) {
+            return angular.copy(currentUser);
+        } else {
+            return null;
+        }
+    };
+
+    return service;
+}]);
