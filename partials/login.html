@@ -7,7 +7,7 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                     <input type="text" class="form-control" placeholder="Usuário"
-                           ng-model="user.username" name="username">
+                           ng-model="user.username" name="username" tabindex="1">
                 </div>
             </div>
         </div>
@@ -16,13 +16,13 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
                     <input type="password" class="form-control" placeholder="Senha"
-                           ng-model="user.password" name="password">
+                           ng-model="user.password" name="password" tabindex="2">
                 </div>
             </div>
         </div>
         <div class="col-xs-12 text-center">
-            <a class="btn btn-default" ng-click="login()">Entrar</a><br><br>
-            <sub><a class="btn-link" ng-click="rememberPassword()">Esqueceu sua senha?</a></sub>
+            <a class="btn btn-default" ng-click="login()" tabindex="3">Entrar</a><br><br>
+            <sub><a class="btn-link" ng-click="rememberPassword()" tabindex="4">Esqueceu sua senha?</a></sub>
         </div>
     </form>
 </div>

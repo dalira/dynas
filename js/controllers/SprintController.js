@@ -3,6 +3,12 @@ app.controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'Gro
 
             $scope.identity = LoginService.getCurrentUser();
 
+            $scope.datePopUpsState = {};
+
+            $scope.alterDatePopUp = function (name) {
+                $scope.datePopUpsState[name] = !$scope.datePopUpsState[name];
+            };
+
             var panelSprintBlock = blockUI.instances.get('panel-sprints');
 
             //Filtros

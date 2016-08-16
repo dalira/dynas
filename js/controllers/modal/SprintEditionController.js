@@ -1,6 +1,12 @@
 app.controller('SprintEditionController', ['$scope', '$uibModalInstance', 'sprint', 'onEdition',
         function ($scope, $uibModalInstance, sprint, onEdition) {
 
+            $scope.datePopUpsState = {};
+
+            $scope.alterDatePopUp = function (name) {
+                $scope.datePopUpsState[name] = !$scope.datePopUpsState[name];
+            };
+
             $scope.sprint = sprint;
             $scope.onEdition = onEdition;
 

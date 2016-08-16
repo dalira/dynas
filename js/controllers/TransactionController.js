@@ -1,6 +1,12 @@
 app.controller('TransactionController', ['$scope', '$uibModal', 'blockUI', 'TransactionService',
         function ($scope, $uibModal, blockUI, TransactionService) {
 
+            $scope.datePopUpsState = {};
+
+            $scope.alterDatePopUp = function (name) {
+                $scope.datePopUpsState[name] = !$scope.datePopUpsState[name];
+            };
+
             var panelTransactionBlock = blockUI.instances.get('panel-transactions');
 
             //Filtros

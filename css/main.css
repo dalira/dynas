@@ -159,3 +159,12 @@ span.input-group-addon {
     color: green;
     cursor: hand;
 }
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white;
+}
+
+.user-menu-dropdown, .user-menu-dropdown:focus, .user-menu-dropdown:hover {
+    color: green;
+    margin-right: 20px;
+}

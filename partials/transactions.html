@@ -3,7 +3,7 @@
 <div class="content col-xs-12">
     <div class="list-transaction-menu">
         <span class="col-md-12">
-            <a class="btn btn-default pull-left" ng-click="changeFilterVisibility()">
+            <a class="btn btn-default btn-action pull-left" ng-click="changeFilterVisibility()">
                 <i class="fa fa-search fa-1-5 fa-flip-horizontal"></i>
             </a>
         </span>
@@ -31,16 +31,16 @@
                             <div id="grupoDataFiltro">
                                 <div class="col-xs-6 no-padding-left">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                        <input type="date" class="form-control" placeholder="Data Inicial"
-                                               ng-model="filter.date.begin" ng-change="query()">
+                                        <a class="input-group-addon" ng-click="alterDatePopUp('filterDateBegin')"><i class="fa fa-calendar"></i></a>
+                                        <input name="filterDateBegin" class="form-control" placeholder="Data Inicial" uib-datepicker-popup="dd/MM/yyyy" ng-model="filter.date.begin"
+                                               is-open="datePopUpsState.filterDateBegin" show-button-bar="false" ng-change="query()" readonly ng-click="alterDatePopUp('filterDateBegin')">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 no-padding-right">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                        <input type="date" class="form-control" placeholder="Data Final"
-                                               ng-model="filter.date.end" ng-change="query()">
+                                        <a class="input-group-addon" ng-click="alterDatePopUp('filterDateEnd')"><i class="fa fa-calendar"></i></a>
+                                        <input name="filterDateEnd" class="form-control" placeholder="Data Final" uib-datepicker-popup="dd/MM/yyyy" ng-model="filter.date.end"
+                                               is-open="datePopUpsState.filterDateEnd" show-button-bar="false" ng-change="query()" readonly ng-click="alterDatePopUp('filterDateEnd')">
                                     </div>
                                 </div>
                             </div>
