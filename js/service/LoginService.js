@@ -1,9 +1,9 @@
-app.factory('LoginService', ['$q', '$window', 'RouteService', function ($q, $window, RouteService) {
+app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'RouteService', function ($q, $window, $resource, serverBasePath, RouteService) {
+    var Auth = $resource(serverBasePath + '/auth', {}, {authenticate: {method: 'PUT'}});
+
     var service = {};
 
     var currentUser;
-
-    //TODO: Obter user quando token estiver em sessão
 
     service.isLoggedIn = function () {
         if (currentUser) {
@@ -16,22 +16,14 @@ app.factory('LoginService', ['$q', '$window', 'RouteService', function ($q, $win
     service.login = function (user) {
         var def = $q.defer();
 
-        setTimeout(function () {
-
-            var usuario = {
-                username: 'dalira',
-                name: 'Diego André Lira',
-                group: {
-                    id: 1,
-                    name: 'Relacionamento'
-                },
-                admin: false
-            };
-
-            currentUser = usuario;
-
-            def.resolve(usuario);
-        }, 2000);
+        Auth.authenticate(user).$promise
+            .then(function (data, headers) {
+                def.resolve();
+            })
+            .catch(function (err) {
+                console.log(err);
+                def.reject(err);
+            });
 
         return def.promise;
     };
