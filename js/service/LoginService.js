@@ -1,57 +1,68 @@
-app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'RouteService', function ($q, $window, $resource, serverBasePath, RouteService) {
-    var Auth = $resource(serverBasePath + '/auth', {}, {authenticate: {method: 'PUT'}});
+app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'RouteService', 'UserService',
+    function ($q, $window, $resource, serverBasePath, RouteService, UserService) {
 
-    var service = {};
+        var Auth = $resource(serverBasePath + '/auth', {}, {authenticate: {method: 'PUT'}});
 
-    var currentUser;
+        var service = {};
 
-    service.isLoggedIn = function () {
-        if (currentUser) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+        var currentUser;
 
-    service.login = function (user) {
-        var def = $q.defer();
+        service.isLoggedIn = function () {
+            if (currentUser) {
+                return true;
+            } else {
+                return false;
+            }
+        };
 
-        Auth.authenticate(user).$promise
-            .then(function (data, headers) {
-                def.resolve();
-            })
-            .catch(function (err) {
-                console.log(err);
-                def.reject(err);
-            });
+        service.login = function (user) {
+            var def = $q.defer();
 
-        return def.promise;
-    };
+            Auth.authenticate(user).$promise
+                .then(function (data, headers) {
 
-    service.logOut = function () {
-        currentUser = null;
-        //TODO: Limpar token
+                    UserService.get(user.login).$promise
+                        .then(function (user) {
+                            currentUser = user;
+                            def.resolve(user);
+                        })
+                        .catch(function () {
+                            def.reject();
+                        });
 
-        RouteService.toLoginScreen();
-    };
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    def.reject(err);
+                });
 
-    service.rememberPassword = function (login) {
-        var def = $q.defer();
+            return def.promise;
+        };
 
-        setTimeout(function () {
-            def.success();
-        }, 2000);
+        service.logOut = function () {
+            currentUser = null;
+            //TODO: Limpar token
 
-        return def.promise;
-    };
+            RouteService.toLoginScreen();
+        };
 
-    service.getCurrentUser = function () {
-        if (currentUser) {
-            return angular.copy(currentUser);
-        } else {
-            return null;
-        }
-    };
+        service.rememberPassword = function (login) {
+            var def = $q.defer();
 
-    return service;
-}]);
+            setTimeout(function () {
+                def.success();
+            }, 2000);
+
+            return def.promise;
+        };
+
+        service.getCurrentUser = function () {
+            if (currentUser) {
+                return angular.copy(currentUser);
+            } else {
+                return null;
+            }
+        };
+
+        return service;
+    }]);

@@ -7,13 +7,14 @@
                 <span class="fa fa-user fa-2x"></span>
                   <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu" uib-dropdown-menu>
-                <li>
+              <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+                <li class="text-center">
                   {{identity().name}}<br>
                   <sub>({{identity().group.name}})</sub>
                 </li>
-                <li>
-                  <a class="logout" ng-click="logOut()">Sair<span class="fa fa-sign-out"></span></a>
+                <li role="separator" class="divider"></li>
+                <li class="text-center">
+                  <a class="logout" ng-click="logOut()">Sair&nbsp;<span class="fa fa-sign-out"></span></a>
                 </li>
               </ul>
             </span>

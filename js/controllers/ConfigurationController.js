@@ -15,10 +15,11 @@ app.controller('ConfigurationController', ['$scope', '$uibModal', 'blockUI', 'Co
 
             $scope.save = function () {
                 panelConfigurationBlock.start();
-                var promise = ConfigurationService.save();
+                var promise = ConfigurationService.save($scope.configuration);
 
                 promise.then(function (configuration) {
-                    backupConfiguration = angular.clone(configuration);
+                    backupConfiguration = angular.copy(configuration);
+                    $scope.configuration = configuration;
                     panelConfigurationBlock.stop();
                 });
 

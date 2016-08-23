@@ -156,8 +156,9 @@ span.input-group-addon {
 }
 
 .logout {
-    color: green;
+    color: green !important;
     cursor: hand;
+    font-size: 1.2em;
 }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
@@ -167,4 +168,8 @@ span.input-group-addon {
 .user-menu-dropdown, .user-menu-dropdown:focus, .user-menu-dropdown:hover {
     color: green;
     margin-right: 20px;
+}
+
+.dropdown-menu>li>* {
+    padding: 3px 10px;
 }

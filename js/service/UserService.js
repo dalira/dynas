@@ -1,61 +1,54 @@
-app.factory('UserService', ['$q', function ($q) {
+app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $resource, serverBasePath) {
         var service = {};
+
+        var User = $resource(serverBasePath + '/usuarios/:login',
+            {login : '@'},
+            {create : {method : 'POST'},
+             update: {method: 'PUT'}});
 
         const regPerPage = 20;
 
-        var dummyValue = {
-            currentPage: 1,
-            totalItems: 2,
-            items: [
-                {
-                    id: 1,
-                    name: 'Diego',
-                    active: true,
-                    group: {
-                        id: 1,
-                        name: 'Relacionamento'
-                    }
-                },
-                {
-                    id: 2,
-                    name: 'André',
-                    active: false,
-                    group: {
-                        id: 2,
-                        name: 'Credenciamento'
-                    }
-                },
-                {
-                    id: 3,
-                    name: 'Lira',
-                    active: true,
-                    group: {
-                        id: 1,
-                        name: 'Relacionamento'
-                    }
-                }
-            ]
+        service.get = function (login) {
+            var def = $q.defer();
+
+            User.get({login : login}).$promise
+                .then(function (usuario) {
+                    def.resolve(usuario);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
+                });
+
+            return def.promise;
         };
 
         service.query = function (filter, page) {
             var def = $q.defer();
 
-            setTimeout(function () {
-                def.resolve(dummyValue);
-            }, 2000);
+            User.query(filter).$promise
+                .then(function (usuarios) {
+                    def.resolve(usuarios);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
+                });
 
             return def.promise;
         };
 
-        service.create = function (sprint) {
+        service.create = function (user) {
             var def = $q.defer();
 
-            setTimeout(function () {
-                dummyValue.items.push(sprint);
-                dummyValue.totalItems = dummyValue.totalItems + 1;
-
-                def.resolve();
-            }, 2000);
+            User.create(user).$promise
+                .then(function (newUser) {
+                    def.resolve(newUser);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
+                });
 
             return def.promise;
         };
@@ -63,14 +56,14 @@ app.factory('UserService', ['$q', function ($q) {
         service.save = function (sprint) {
             var def = $q.defer();
 
-            setTimeout(function () {
-                var index = dummyValue.items.findIndex(function (s) {
-                    return s.id === sprint.id;
+            User.update().$promise
+                .then(function (newUser) {
+                    def.resolve(newUser);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
                 });
-                dummyValue.items[index] = sprint;
-
-                def.resolve();
-            }, 2000);
 
             return def.promise;
         };

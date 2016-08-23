@@ -1,17 +1,21 @@
-app.factory('ConfigurationService', ['$q', function ($q) {
+app.factory('ConfigurationService', ['$q', '$resource', 'serverBasePath', function ($q, $resource, serverBasePath) {
         var service = {};
 
-        var dummyValue = {
-            initialValue: 2000,
-            duration: 'MENSAL'
-        };
+        var Configuration = $resource(serverBasePath + '/configuracao', null, {
+            update : {method : 'PUT'}
+        });
 
         service.get = function () {
             var def = $q.defer();
 
-            setTimeout(function () {
-                def.resolve(dummyValue);
-            }, 2000);
+            Configuration.get().$promise
+                .then(function (configuration) {
+                    def.resolve(configuration);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    def.reject();
+                });
 
             return def.promise;
         };
@@ -19,11 +23,14 @@ app.factory('ConfigurationService', ['$q', function ($q) {
         service.save = function (configuration) {
             var def = $q.defer();
 
-            setTimeout(function () {
-                dummyValue = configuration;
-
-                def.resolve(configuration);
-            }, 2000);
+            Configuration.update({}, configuration).$promise
+                .then(function (newConfiguration) {
+                    def.resolve(newConfiguration);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    def.reject();
+                });
 
             return def.promise;
         };

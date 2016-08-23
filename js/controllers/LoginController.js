@@ -1,60 +1,56 @@
 app.controller('LoginController', ['$scope', 'LoginService', 'RouteService', 'blockUI',
-        function ($scope, LoginService, RouteService, blockUI) {
+    function ($scope, LoginService, RouteService, blockUI) {
 
-            $scope.user = {};
+        $scope.user = {};
 
-            $scope.login = function () {
-                var invalid = false;
+        $scope.login = function () {
+            var invalid = false;
 
-                if (!($scope.user.username)) {
-                    $scope.loginForm.username.$setValidity('required', false);
-                    invalid = true;
-                }
-                if (!($scope.user.password)) {
-                    $scope.loginForm.password.$setValidity('required', false);
-                    invalid = true;
-                }
+            if (!($scope.user.login)) {
+                $scope.loginForm.login.$setValidity('required', false);
+                invalid = true;
+            }
+            if (!($scope.user.password)) {
+                $scope.loginForm.password.$setValidity('required', false);
+                invalid = true;
+            }
 
-                if (invalid) {
-                    return;
-                }
+            if (invalid) {
+                return;
+            }
 
-                blockUI.start();
-                var promise = LoginService.login($scope.user);
-
-                promise.then(function () {
+            blockUI.start();
+            LoginService.login($scope.user)
+                .then(function () {
                     blockUI.stop();
                     RouteService.toSprintScreen();
-                });
-
-                promise.catch(function () {
+                })
+                .catch(function () {
                     blockUI.stop();
                 });
-            };
+        };
 
-            $scope.rememberPassword = function () {
-                $scope.loginForm.username.$setValidity('required', true);
-                $scope.loginForm.password.$setValidity('required', true);
+        $scope.rememberPassword = function () {
+            $scope.loginForm.login.$setValidity('required', true);
+            $scope.loginForm.password.$setValidity('required', true);
 
-                var invalid = false;
+            var invalid = false;
 
-                if (!($scope.user.login)) {
-                    $scope.loginForm.username.$setValidity('required', false);
-                }
+            if (!($scope.user.login)) {
+                $scope.loginForm.login.$setValidity('required', false);
+            }
 
-                if (invalid) {
-                    return;
-                }
+            if (invalid) {
+                return;
+            }
 
-                var promise = LoginService.rememberPassword($scope.user.username);
+            LoginService.rememberPassword($scope.user.login)
+                .then(function () {
 
-                promise.then(function () {
-
-                });
-
-                promise.catch(function () {
+                })
+                .catch(function () {
 
                 });
-            };
+        };
 
-        }]);
+    }]);
