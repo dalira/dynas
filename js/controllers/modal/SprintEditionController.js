@@ -1,5 +1,5 @@
-app.controller('SprintEditionController', ['$scope', '$uibModalInstance', 'sprint', 'onEdition',
-        function ($scope, $uibModalInstance, sprint, onEdition) {
+app.controller('SprintEditionController', ['$scope', '$uibModalInstance', 'GroupService', 'sprint', 'onEdition',
+    function ($scope, $uibModalInstance, GroupService, sprint, onEdition) {
 
             $scope.datePopUpsState = {};
 
@@ -10,15 +10,13 @@ app.controller('SprintEditionController', ['$scope', '$uibModalInstance', 'sprin
             $scope.sprint = sprint;
             $scope.onEdition = onEdition;
 
-            $scope.groups = [
-                {   id: '1',
-                    name: 'Relacionamento'
-                },
-                {
-                    id: '2',
-                    name: 'Credenciamento'
-                }
-            ];
+        GroupService.get()
+            .then(function (groups) {
+                $scope.groups = groups;
+            })
+            .catch(function () {
+                //TODO: Tratar erros
+            });
 
             $scope.ok = function () {
                 if ($scope.sprintEditForm.$valid) {

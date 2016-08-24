@@ -48,7 +48,7 @@
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control" id="grupoFiltro" ng-model="filter.group"
                                         ng-change="query()"
-                                        ng-options="group as group.name for group in groups track by group.id">
+                                        ng-options="group as group.name for group in groups track by group._id">
                                     <option class="placeholder" value="">Grupo...</option>
                                 </select>
                             </div>

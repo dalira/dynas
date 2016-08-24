@@ -21,7 +21,7 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
             Auth.authenticate(user).$promise
                 .then(function (data, headers) {
 
-                    UserService.get(user.login).$promise
+                    UserService.get(user.login)
                         .then(function (user) {
                             currentUser = user;
                             def.resolve(user);

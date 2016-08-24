@@ -94,16 +94,23 @@ app.controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'Gro
                         })
                         .catch(function () {
                             //TODO: Tratar erro
+                            panelSprintBlock.stop();
                         });
                 });
             };
 
             //Chamadas de criação de controller
 
+            //Inicialização do campo de filtro de grupo
+            GroupService.get()
+                .then(function (groups) {
+                    $scope.groups = groups;
+                })
+                .catch(function () {
+                    //TODO: Tratar erros
+                });
+
             //Inicializaço dos sprints
             $scope.query();
-
-            //Inicialização do campo de filtro de grupo
-            $scope.groups = GroupService.get();
 
         }]);

@@ -2,7 +2,7 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
         var service = {};
 
         var User = $resource(serverBasePath + '/usuarios/:login',
-            {login : '@'},
+            {login: '@login'},
             {create : {method : 'POST'},
              update: {method: 'PUT'}});
 

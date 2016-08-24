@@ -1,64 +1,58 @@
-app.factory('GroupService', ['$q', function ($q) {
-        var service = {};
+app.factory('GroupService', ['$q', '$resource', 'serverBasePath', function ($q, $resource, serverBasePath) {
+    var service = {};
 
-        var dummyValue = [
-            {
-                id: 1,
-                name: 'Relacionamento',
-                active: true
-            },
-            {
-                id: 2,
-                name: 'Credenciamento',
-                active: false
-            }
-        ];
+    var Group = $resource(serverBasePath + '/grupos/:id',
+        {id: '@id'},
+        {
+            update: {method: 'PUT'},
+            create: {method: 'POST'}
+        });
 
-        service.get = function () {
-            var def = $q.defer();
+    service.get = function () {
+        var def = $q.defer();
 
-            setTimeout(function () {
-                def.resolve(dummyValue);
-            }, 2000);
+        Group.query({}).$promise
+            .then(function (groups) {
+                def.resolve(groups);
+            })
+            .catch(function (err) {
+                console.error(err);
+                def.reject();
+            });
 
-            return def.promise;
-        };
+        return def.promise;
+    };
 
-        service.create = function (group) {
-            var def = $q.defer();
+    service.create = function (group) {
+        var def = $q.defer();
 
-            setTimeout(function () {
+        Group.create({}, group).$promise
+            .then(function (newGroup) {
+                def.resolve(newGroup);
+            })
+            .catch(function (err) {
+                console.error(err);
+                def.reject();
+            });
 
-                dummyValue.push(group);
+        return def.promise;
+    };
 
-                def.resolve();
-            }, 2000);
+    service.save = function (group) {
+        var def = $q.defer();
 
-            return def.promise;
-        };
+        Group.update({id: group._id}, group).$promise
+            .then(function (newGroup) {
+                def.resolve(newGroup);
+            })
+            .catch(function (err) {
+                console.error(err);
+                def.reject();
+            });
 
-        service.save = function (group) {
-            var def = $q.defer();
+        return def.promise;
+    };
 
-            setTimeout(function () {
-
-                var index = dummyValue.findIndex(function (g) {
-                    return g.id === group.id;
-                });
-
-                if (index >= 0) {
-                    dummyValue[index] = group;
-                } else {
-                    dummyValue.push(group);
-                }
-
-
-                def.resolve();
-            }, 2000);
-
-            return def.promise;
-        };
-
-        return service;
-    }
-    ]);
+    return service;
+}
+]);
