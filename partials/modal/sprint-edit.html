@@ -22,7 +22,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                 <select name="sprintGroup" class="form-control" ng-model="sprint.group" required="true"
-                        ng-options="group as group.name for group in groups track by group.id">
+                        ng-options="group as group.name for group in groups track by group._id">
                     <option class="placeholder" value="">Grupo...</option>
                 </select>
             </div>

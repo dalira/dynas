@@ -1,17 +1,22 @@
 app.factory('SprintService', ['$q', '$resource', 'serverBasePath', function ($q, $resource, serverBasePath) {
     var service = {};
 
-    var Sprint = $resource(serverBasePath + '/sprints', {}, {
-        create: {method: 'POST'},
-        save: {method: 'PUT'}
-    });
+    var Sprint = $resource(serverBasePath + '/sprints/:id',
+        {id: '@id'},
+        {
+            create: {method: 'POST'},
+            save: {method: 'PUT'}
+        });
 
-    const regPerPage = 20;
+    const regPerPage = 2;
 
     service.query = function (filter, page) {
         var def = $q.defer();
 
-        Sprint.query(filter).$promise
+        filter['_page'] = page;
+        filter['_limit'] = regPerPage;
+
+        Sprint.get(filter).$promise
             .then(function (sprints) {
                 def.resolve(sprints);
             })
@@ -40,7 +45,7 @@ app.factory('SprintService', ['$q', '$resource', 'serverBasePath', function ($q,
     service.save = function (sprint) {
         var def = $q.defer();
 
-        Sprint.save(sprint).$promise
+        Sprint.save({id: sprint._id}, sprint).$promise
             .then(function () {
                 def.resolve();
             })
