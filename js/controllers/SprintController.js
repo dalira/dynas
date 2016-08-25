@@ -63,7 +63,7 @@ app.controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'Gro
 
             var openModal = function (sprint) {
 
-                var onEdition = (sprint);
+                var onEdition = (sprint !== undefined);
                 sprint = sprint || {};
 
                 var modalInstance = $uibModal.open({

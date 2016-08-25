@@ -8,7 +8,7 @@ app.factory('SprintService', ['$q', '$resource', 'serverBasePath', function ($q,
             save: {method: 'PUT'}
         });
 
-    const regPerPage = 2;
+    const regPerPage = 20;
 
     service.query = function (filter, page) {
         var def = $q.defer();
