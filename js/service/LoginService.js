@@ -1,7 +1,16 @@
 app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'RouteService', 'UserService',
     function ($q, $window, $resource, serverBasePath, RouteService, UserService) {
 
-        var Auth = $resource(serverBasePath + '/auth', {}, {authenticate: {method: 'PUT'}});
+        var Auth = $resource(serverBasePath + '/auth', {}, {
+            authenticate: {
+                method: 'PUT',
+                interceptor: {
+                    response: function (response) {
+                        return response.headers()['authorization'];
+                    }
+                }
+            }
+        });
 
         var service = {};
 
@@ -19,7 +28,9 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
             var def = $q.defer();
 
             Auth.authenticate(user).$promise
-                .then(function (data, headers) {
+                .then(function (authorization) {
+
+                    console.log(authorization);
 
                     UserService.get(user.login)
                         .then(function (user) {
