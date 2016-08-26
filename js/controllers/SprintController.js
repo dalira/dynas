@@ -1,116 +1,116 @@
 app.controller('SprintController', ['$scope', '$uibModal', 'SprintService', 'GroupService', 'blockUI', 'LoginService',
-        function ($scope, $uibModal, SprintService, GroupService, blockUI, LoginService) {
+    function ($scope, $uibModal, SprintService, GroupService, blockUI, LoginService) {
 
-            $scope.identity = LoginService.getCurrentUser();
+        $scope.identity = LoginService.getCurrentUser();
 
-            $scope.datePopUpsState = {};
+        $scope.datePopUpsState = {};
 
-            $scope.alterDatePopUp = function (name) {
-                $scope.datePopUpsState[name] = !$scope.datePopUpsState[name];
-            };
+        $scope.alterDatePopUp = function (name) {
+            $scope.datePopUpsState[name] = !$scope.datePopUpsState[name];
+        };
 
-            var panelSprintBlock = blockUI.instances.get('panel-sprints');
+        var panelSprintBlock = blockUI.instances.get('panel-sprints');
 
-            //Filtros
-            $scope.showFilter = false;
-            $scope.groups = [];
-            $scope.filter = {};
+        //Filtros
+        $scope.showFilter = false;
+        $scope.groups = [];
+        $scope.filter = {};
 
-            $scope.changeFilterVisibility = function () {
-                $scope.showFilter = !$scope.showFilter;
-            };
+        $scope.changeFilterVisibility = function () {
+            $scope.showFilter = !$scope.showFilter;
+        };
 
-            $scope.query = function () {
+        $scope.query = function () {
 
-                panelSprintBlock.start();
+            panelSprintBlock.start();
 
-                var promisePage = SprintService.query($scope.filter, $scope.currentPage);
+            var promisePage = SprintService.query($scope.filter, $scope.currentPage);
 
-                promisePage
-                    .then(function (page) {
-                        $scope.currentPage = page.currentPage;
-                        $scope.totalItems = page.totalItems;
-                        $scope.sprints = page.items;
+            promisePage
+                .then(function (page) {
+                    $scope.currentPage = page.currentPage;
+                    $scope.totalItems = page.totalItems;
+                    $scope.sprints = page.items;
 
-                        panelSprintBlock.stop();
-                        //TODO: Notificar sucesso
-                    })
-                    .catch(function () {
-                        //TODO: Tratar erros
-                    });
-            };
-
-            $scope.limparFiltros = function () {
-                $scope.filter = {};
-                $scope.currentPage = 1;
-
-                $scope.query();
-            };
-
-            //Paginacao
-            $scope.currentPage = 1;
-            $scope.totalItems = 0;
-            $scope.sprints = [];
-
-            //Actions
-            $scope.editSprint = function (sprint) {
-                openModal(sprint);
-            };
-
-            $scope.newSprint = function () {
-                openModal();
-            };
-
-            var openModal = function (sprint) {
-
-                var onEdition = (sprint !== undefined);
-                sprint = sprint || {};
-
-                var modalInstance = $uibModal.open({
-                    templateUrl: 'partials/modal/sprint-edit.html',
-                    controller: 'SprintEditionController',
-                    size: 'lg',
-                    backdrop: 'static',
-                    resolve: {
-                        sprint: angular.copy(sprint),
-                        onEdition: onEdition
-                    }
-                });
-
-                modalInstance.result.then(function (sprint) {
-                    panelSprintBlock.start();
-
-                    var promise;
-                    if (onEdition) {
-                        promise = SprintService.save(sprint);
-                    } else {
-                        promise = SprintService.create(sprint);
-                    }
-
-                    promise
-                        .then(function () {
-                            $scope.query();
-                            panelSprintBlock.stop();
-                        })
-                        .catch(function () {
-                            //TODO: Tratar erro
-                            panelSprintBlock.stop();
-                        });
-                });
-            };
-
-            //Chamadas de criação de controller
-
-            //Inicialização do campo de filtro de grupo
-            GroupService.get()
-                .then(function (groups) {
-                    $scope.groups = groups;
+                    panelSprintBlock.stop();
+                    //TODO: Notificar sucesso
                 })
                 .catch(function () {
                     //TODO: Tratar erros
                 });
+        };
 
-            //Inicializaço dos sprints
+        $scope.limparFiltros = function () {
+            $scope.filter = {};
+            $scope.currentPage = 1;
+
             $scope.query();
+        };
 
-        }]);
+        //Paginacao
+        $scope.currentPage = 1;
+        $scope.totalItems = 0;
+        $scope.sprints = [];
+
+        //Actions
+        $scope.editSprint = function (sprint) {
+            openModal(sprint);
+        };
+
+        $scope.newSprint = function () {
+            openModal();
+        };
+
+        var openModal = function (sprint) {
+
+            var onEdition = (sprint !== undefined);
+            sprint = sprint || {};
+
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/modal/sprint-edit.html',
+                controller: 'SprintEditionController',
+                size: 'lg',
+                backdrop: 'static',
+                resolve: {
+                    sprint: angular.copy(sprint),
+                    onEdition: onEdition
+                }
+            });
+
+            modalInstance.result.then(function (sprint) {
+                panelSprintBlock.start();
+
+                var promise;
+                if (onEdition) {
+                    promise = SprintService.save(sprint);
+                } else {
+                    promise = SprintService.create(sprint);
+                }
+
+                promise
+                    .then(function () {
+                        $scope.query();
+                        panelSprintBlock.stop();
+                    })
+                    .catch(function () {
+                        //TODO: Tratar erro
+                        panelSprintBlock.stop();
+                    });
+            });
+        };
+
+        //Chamadas de criação de controller
+
+        //Inicialização do campo de filtro de grupo
+        GroupService.get()
+            .then(function (groups) {
+                $scope.groups = groups;
+            })
+            .catch(function () {
+                //TODO: Tratar erros
+            });
+
+        //Inicializaço dos sprints
+        $scope.query();
+
+    }]);

@@ -1,7 +1,7 @@
-app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'RouteService', 'UserService',
-    function ($q, $window, $resource, serverBasePath, RouteService, UserService) {
+app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBasePath', 'RouteService', 'UserService',
+    function ($q, $window, $resource, $window, serverBasePath, RouteService, UserService) {
 
-        var Auth = $resource(serverBasePath + '/auth', {}, {
+        var Auth = $resource(serverBasePath + '/auth/:user', {}, {
             authenticate: {
                 method: 'PUT',
                 interceptor: {
@@ -9,6 +9,10 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
                         return response.headers()['authorization'];
                     }
                 }
+            },
+            current: {
+                method: 'GET',
+                params: {user: 'user'}
             }
         });
 
@@ -29,18 +33,12 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
 
             Auth.authenticate(user).$promise
                 .then(function (authorization) {
-
-                    console.log(authorization);
-
-                    UserService.get(user.login)
-                        .then(function (user) {
-                            currentUser = user;
-                            def.resolve(user);
-                        })
-                        .catch(function () {
-                            def.reject();
-                        });
-
+                    $window.localStorage.token = authorization;
+                })
+                .then(service.updateCurrentUser)
+                .then(function (user) {
+                    currentUser = user;
+                    def.resolve(user);
                 })
                 .catch(function (err) {
                     console.log(err);
@@ -52,7 +50,7 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
 
         service.logOut = function () {
             currentUser = null;
-            //TODO: Limpar token
+            $window.localStorage.token = null;
 
             RouteService.toLoginScreen();
         };
@@ -60,6 +58,7 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
         service.rememberPassword = function (login) {
             var def = $q.defer();
 
+            //TODO
             setTimeout(function () {
                 def.success();
             }, 2000);
@@ -73,6 +72,21 @@ app.factory('LoginService', ['$q', '$window', '$resource', 'serverBasePath', 'Ro
             } else {
                 return null;
             }
+        };
+
+        service.updateCurrentUser = function () {
+            var def = $q.defer();
+
+            Auth.current().$promise
+                .then(function (user) {
+                    currentUser = user;
+                    def.resolve(user);
+                })
+                .catch(function () {
+                    def.reject();
+                });
+
+            return def.promise;
         };
 
         return service;
