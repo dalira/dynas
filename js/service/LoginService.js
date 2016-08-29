@@ -21,7 +21,7 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
         var currentUser;
 
         service.isLoggedIn = function () {
-            if (currentUser) {
+            if ($window.localStorage.token) {
                 return true;
             } else {
                 return false;
@@ -75,18 +75,25 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
         };
 
         service.updateCurrentUser = function () {
-            var def = $q.defer();
+            var promise;
+            if (currentUser) {
+                promise = $q.resolve(this.user);
+            } else {
+                var def = $q.defer();
 
-            Auth.current().$promise
-                .then(function (user) {
-                    currentUser = user;
-                    def.resolve(user);
-                })
-                .catch(function () {
-                    def.reject();
-                });
+                Auth.current().$promise
+                    .then(function (user) {
+                        currentUser = user;
+                        def.resolve(user);
+                    })
+                    .catch(function () {
+                        def.reject();
+                    });
 
-            return def.promise;
+                promise = def.promise;
+            }
+
+            return promise;
         };
 
         return service;

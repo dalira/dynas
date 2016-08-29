@@ -20,9 +20,7 @@ app.factory('tokenAuthInterceptor', ['$q', '$window',
         function ($rootScope, $location, LoginService, RouteService) {
             $rootScope.$on('$routeChangeStart', function (event, newUrl) {
 
-                if (newUrl.requireAuth && !LoginService.isLoggedIn()) {
-                    event.preventDefault();
-
+                if (LoginService.isLoggedIn()) {
                     LoginService.updateCurrentUser()
                         .then(function () {
                             RouteService.toSprintScreen();
@@ -30,6 +28,8 @@ app.factory('tokenAuthInterceptor', ['$q', '$window',
                         .catch(function () {
                             RouteService.toLoginScreen();
                         });
+                } else {
+                    RouteService.toLoginScreen();
                 }
             });
         }])
