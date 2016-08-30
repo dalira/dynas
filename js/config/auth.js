@@ -21,9 +21,12 @@ app.factory('tokenAuthInterceptor', ['$q', '$window',
             $rootScope.$on('$routeChangeStart', function (event, newUrl) {
 
                 if (LoginService.isLoggedIn()) {
-                    LoginService.updateCurrentUser()
+                    LoginService.getCurrentUser()
                         .then(function () {
-                            RouteService.toSprintScreen();
+                            if (newUrl.originalPath === "/login") {
+                                //Se ja estiver logado acessando o login, vai pra sprints
+                                RouteService.toSprintScreen();
+                            }
                         })
                         .catch(function () {
                             RouteService.toLoginScreen();

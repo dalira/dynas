@@ -32,7 +32,12 @@ app.controller('UserController', ['$scope', '$uibModal', 'blockUI', 'GroupServic
 
                 panelUserBlock.start();
 
-                var promisePage = UserService.query($scope.filter, $scope.currentPage);
+                var filter = angular.copy($scope.filter);
+                if (!filter["active"]) {
+                    delete filter["active"];
+                }
+
+                var promisePage = UserService.query(filter, $scope.currentPage);
 
                 promisePage
                     .then(function (page) {

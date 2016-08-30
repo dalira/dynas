@@ -16,26 +16,24 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
             }
         });
 
-        var service = {};
-
         var currentUser;
 
-        service.isLoggedIn = function () {
+        function isLoggedIn() {
             if ($window.localStorage.token) {
                 return true;
             } else {
                 return false;
             }
-        };
+        }
 
-        service.login = function (user) {
+        function login(user) {
             var def = $q.defer();
 
             Auth.authenticate(user).$promise
                 .then(function (authorization) {
                     $window.localStorage.token = authorization;
                 })
-                .then(service.updateCurrentUser)
+                .then(getCurrentUser)
                 .then(function (user) {
                     currentUser = user;
                     def.resolve(user);
@@ -46,16 +44,16 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
                 });
 
             return def.promise;
-        };
+        }
 
-        service.logOut = function () {
+        function logOut() {
             currentUser = null;
             $window.localStorage.token = null;
 
             RouteService.toLoginScreen();
-        };
+        }
 
-        service.rememberPassword = function (login) {
+        function rememberPassword(login) {
             var def = $q.defer();
 
             //TODO
@@ -64,17 +62,9 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
             }, 2000);
 
             return def.promise;
-        };
+        }
 
-        service.getCurrentUser = function () {
-            if (currentUser) {
-                return angular.copy(currentUser);
-            } else {
-                return null;
-            }
-        };
-
-        service.updateCurrentUser = function () {
+        function getCurrentUser() {
             var promise;
             if (currentUser) {
                 promise = $q.resolve(this.user);
@@ -94,7 +84,13 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
             }
 
             return promise;
-        };
+        }
 
-        return service;
+        return {
+            isLoggedIn: isLoggedIn,
+            login: login,
+            logOut: logOut,
+            rememberPassword: rememberPassword,
+            getCurrentUser: getCurrentUser
+        };
     }]);
