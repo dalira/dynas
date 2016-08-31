@@ -1,11 +1,11 @@
 app.factory('GroupService', ['$q', '$resource', 'serverBasePath', function ($q, $resource, serverBasePath) {
     var service = {};
 
-    var Group = $resource(serverBasePath + '/grupos/:id',
-        {id: '@id'},
+    var Group = $resource(serverBasePath + '/grupos/:_id',
+        {_id: '@_id'},
         {
-            update: {method: 'PUT'},
-            create: {method: 'POST'}
+            create: {method: 'POST', params: {login: null}},
+            update: {method: 'PUT'}
         });
 
     service.get = function () {
@@ -41,7 +41,7 @@ app.factory('GroupService', ['$q', '$resource', 'serverBasePath', function ($q, 
     service.save = function (group) {
         var def = $q.defer();
 
-        Group.update({id: group._id}, group).$promise
+        Group.update(group).$promise
             .then(function (newGroup) {
                 def.resolve(newGroup);
             })

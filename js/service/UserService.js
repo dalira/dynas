@@ -4,7 +4,7 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
     var User = $resource(serverBasePath + '/usuarios/:login',
         {login: '@login'},
         {
-            create: {method: 'POST'},
+            create: {method: 'POST', params: {login: null}},
             update: {method: 'PUT'}
         });
 
@@ -27,6 +27,9 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
 
     function query(filter, page) {
         var def = $q.defer();
+
+        filter['_page'] = page;
+        filter['_limit'] = regPerPage;
 
         User.get(filter).$promise
             .then(function (usuarios) {
@@ -55,10 +58,10 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
         return def.promise;
     }
 
-    function save(sprint) {
+    function save(user) {
         var def = $q.defer();
 
-        User.update().$promise
+        User.update(user).$promise
             .then(function (newUser) {
                 def.resolve(newUser);
             })

@@ -4,7 +4,7 @@ app.factory('SprintService', ['$q', '$resource', 'serverBasePath', function ($q,
     var Sprint = $resource(serverBasePath + '/sprints/:id',
         {id: '@id'},
         {
-            create: {method: 'POST'},
+            create: {method: 'POST', params: {login: null}},
             save: {method: 'PUT'}
         });
 

@@ -1,131 +1,66 @@
-app.factory('TransactionService', ['$q', function ($q) {
-        var service = {};
+app.factory('TransactionService', ['$q', '$resource', 'serverBasePath',
+    function ($q, $resource, serverBasePath) {
+
+        var Transaction = $resource(serverBasePath + '/transacoes/:_id',
+            {_id: '@_id'},
+            {
+                create: {method: 'POST', params: {login: null}},
+                update: {method: 'PUT'}
+            });
 
         const regPerPage = 20;
 
-        var dummyValue = {
-            currentPage: 1,
-            totalItems: 2,
-            items: [
-                {
-                    from: {
-                        id: 1,
-                        email: 'dal.lira@gmail.com',
-                        name: 'Diego',
-                        admin: false,
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        active: true
-                    },
-                    to: {
-                        id: 2,
-                        email: 'dal_lira@hotmail.com',
-                        name: 'André',
-                        admin: false,
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        active: true
-                    },
-                    value: 100,
-                    date: new Date(),
-                    sprint: {
-                        id: 1,
-                        name: 'Stairway to Heaven',
-                        begin: new Date(),
-                        end: new Date(),
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        value: '1000'
-                    },
-                    motive: "Motivo"
-                },
-                {
-                    from: {
-                        id: 1,
-                        email: 'dal.lira@gmail.com',
-                        name: 'Diego',
-                        admin: false,
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        active: true
-                    },
-                    to: {
-                        id: 2,
-                        email: 'dal_lira@hotmail.com',
-                        name: 'André',
-                        admin: false,
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        active: true
-                    },
-                    value: 1000,
-                    date: new Date(),
-                    sprint: {
-                        id: 1,
-                        name: 'Stairway to Heaven',
-                        begin: new Date(),
-                        end: new Date(),
-                        group: {
-                            id: 1,
-                            name: 'Relacionamento'
-                        },
-                        value: '1000'
-                    },
-                    motive: "Motivo"
-                }
-            ],
-            totalizer: {
-                value: 1100
-            }
-        };
-
-        service.query = function (filter, page) {
+        function query(filter, page) {
             var def = $q.defer();
 
-            setTimeout(function () {
-                def.resolve(dummyValue);
-            }, 2000);
+            filter['_page'] = page;
+            filter['_limit'] = regPerPage;
 
-            return def.promise;
-        };
-
-        service.create = function (transaction) {
-            var def = $q.defer();
-
-            setTimeout(function () {
-                dummyValue.items.push(transaction);
-                dummyValue.totalItems = dummyValue.totalItems + 1;
-
-                def.resolve();
-            }, 2000);
-
-            return def.promise;
-        };
-
-        service.save = function (sprint) {
-            var def = $q.defer();
-
-            setTimeout(function () {
-                var index = dummyValue.items.findIndex(function (s) {
-                    return s.id === sprint.id;
+            Transaction.get(filter).$promise
+                .then(function (transacoes) {
+                    def.resolve(transacoes);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
                 });
-                dummyValue.items[index] = sprint;
-
-                def.resolve();
-            }, 2000);
 
             return def.promise;
-        };
+        }
 
-        return service;
+        function create(transaction) {
+            var def = $q.defer();
+
+            Transaction.create(transaction).$promise
+                .then(function (newTransaction) {
+                    def.resolve(newTransaction);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
+                });
+
+            return def.promise;
+        }
+
+        function save(transaction) {
+            var def = $q.defer();
+
+            Transaction.update(transaction).$promise
+                .then(function (newTransaction) {
+                    def.resolve(newTransaction);
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    def.reject();
+                });
+
+            return def.promise;
+        }
+
+        return {
+            query: query,
+            create: create,
+            save: save
+        }
     }]);

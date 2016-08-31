@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9e83635-57f5-48d8-af6b-7988e62e827f" name="Default" comment="Ajuste na obtenção de sprints&#10;Ajuste na obtenção do token de autenticação">
+    <list default="true" id="c9e83635-57f5-48d8-af6b-7988e62e827f" name="Default" comment="Ajuste na obtenção de usuarios">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/config/auth.js" afterPath="$PROJECT_DIR$/js/config/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/UserController.js" afterPath="$PROJECT_DIR$/js/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/UserMenuController.js" afterPath="$PROJECT_DIR$/js/controllers/UserMenuController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/LoginService.js" afterPath="$PROJECT_DIR$/js/service/LoginService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/ConfigurationController.js" afterPath="$PROJECT_DIR$/js/controllers/ConfigurationController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js" afterPath="$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/modal/UserEditionController.js" afterPath="$PROJECT_DIR$/js/controllers/modal/UserEditionController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/GroupService.js" afterPath="$PROJECT_DIR$/js/service/GroupService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/SprintService.js" afterPath="$PROJECT_DIR$/js/service/SprintService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/TransactionService.js" afterPath="$PROJECT_DIR$/js/service/TransactionService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/UserService.js" afterPath="$PROJECT_DIR$/js/service/UserService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/user-menu.html" afterPath="$PROJECT_DIR$/partials/user-menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/modal/user-edit.html" afterPath="$PROJECT_DIR$/partials/modal/user-edit.html" />
     </list>
     <ignored path="dynas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +31,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers/UserController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+            <state relative-caret-position="404">
+              <caret line="84" column="33" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/service/TransactionService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/service/GroupService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupEditionController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigurationController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/ConfigurationController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -42,18 +84,18 @@
       <file leaf-file-name="UserService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/service/UserService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="-816">
+              <caret line="6" column="62" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SprintService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SprintService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/service/SprintService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="153">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,17 +129,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/partials/plugin/a.html" />
         <option value="$PROJECT_DIR$/partials/plugin/b.html" />
         <option value="$PROJECT_DIR$/css/plugin.css" />
         <option value="$PROJECT_DIR$/partials/plugin.html" />
         <option value="$PROJECT_DIR$/css/popup.css" />
         <option value="$PROJECT_DIR$/js/service/RoutesService.js" />
         <option value="$PROJECT_DIR$/css/login.css" />
-        <option value="$PROJECT_DIR$/js/service/TransactionService.js" />
         <option value="$PROJECT_DIR$/js/controllers/PluginController.js" />
-        <option value="$PROJECT_DIR$/js/controllers/modal/UserEditionController.js" />
-        <option value="$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js" />
         <option value="$PROJECT_DIR$/js/controllers/MenuController.js" />
         <option value="$PROJECT_DIR$/partials/menu.html" />
         <option value="$PROJECT_DIR$/js/service/RouteService.js" />
@@ -109,11 +147,9 @@
         <option value="localhost:63342/dynas/js/app.js" />
         <option value="localhost:63342/dynas/js/angular/angular.min.js" />
         <option value="$PROJECT_DIR$/js/service/ConfigurationService.js" />
-        <option value="$PROJECT_DIR$/js/controllers/ConfigurationController.js" />
         <option value="$PROJECT_DIR$/partials/login.html" />
         <option value="$PROJECT_DIR$/js/controllers/LoginController.js" />
         <option value="localhost:63342/dynas/js/controllers/LoginController.js" />
-        <option value="$PROJECT_DIR$/js/service/GroupService.js" />
         <option value="localhost:63342/dynas/js/service/GroupService.js" />
         <option value="$PROJECT_DIR$/js/controllers/SprintController.js" />
         <option value="$PROJECT_DIR$/js/controllers/modal/SprintEditionController.js" />
@@ -124,7 +160,6 @@
         <option value="$PROJECT_DIR$/partials/sprints.html" />
         <option value="$PROJECT_DIR$/partials/configuration.html" />
         <option value="$PROJECT_DIR$/partials/modal/sprint-edit.html" />
-        <option value="$PROJECT_DIR$/js/service/SprintService.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/config/response-default-types.js" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -136,8 +171,15 @@
         <option value="$PROJECT_DIR$/js/config/auth.js" />
         <option value="$PROJECT_DIR$/js/controllers/UserMenuController.js" />
         <option value="$PROJECT_DIR$/partials/user-menu.html" />
-        <option value="$PROJECT_DIR$/js/service/UserService.js" />
         <option value="$PROJECT_DIR$/js/controllers/UserController.js" />
+        <option value="$PROJECT_DIR$/js/controllers/modal/UserEditionController.js" />
+        <option value="$PROJECT_DIR$/partials/modal/user-edit.html" />
+        <option value="$PROJECT_DIR$/js/service/UserService.js" />
+        <option value="$PROJECT_DIR$/js/service/TransactionService.js" />
+        <option value="$PROJECT_DIR$/js/service/SprintService.js" />
+        <option value="$PROJECT_DIR$/js/service/GroupService.js" />
+        <option value="$PROJECT_DIR$/js/controllers/ConfigurationController.js" />
+        <option value="$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js" />
       </list>
     </option>
   </component>
@@ -185,8 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -266,12 +306,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -784,7 +884,8 @@
       <workItem from="1472138079398" duration="3925000" />
       <workItem from="1472224045713" duration="3602000" />
       <workItem from="1472482448654" duration="3934000" />
-      <workItem from="1472569247914" duration="3363000" />
+      <workItem from="1472569247914" duration="3651000" />
+      <workItem from="1472656153773" duration="3169000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da tela de sprints">
       <created>1470442478451</created>
@@ -849,11 +950,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472486362158</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ajuste na obtenção de usuarios">
+      <created>1472573430972</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1472573430972</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125427000" />
+    <option name="totallyTimeSpent" value="128884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
@@ -909,7 +1017,8 @@
     <MESSAGE value="Ajuste na obtenção de sprints" />
     <MESSAGE value="Ajuste na obtenção de sprints&#10;Ajuste na obtenção do token de autenticação" />
     <MESSAGE value="Ajuste na auttenticação" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste na auttenticação" />
+    <MESSAGE value="Ajuste na obtenção de usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste na obtenção de usuarios" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -918,21 +1027,32 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/controllers/UserController.js</url>
-          <line>39</line>
+          <url>file://$PROJECT_DIR$/js/controllers/ConfigurationController.js</url>
+          <line>77</line>
           <properties />
-          <option name="timeStamp" value="82" />
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/service/GroupService.js</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/service/GroupService.js</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="83" />
+      <option name="time" value="96" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.html" />
     <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -948,28 +1068,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/service/TransactionService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/PluginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/modal/UserEditionController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
@@ -1018,13 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/TransactionController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/users.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1035,13 +1127,6 @@
     <entry file="http://localhost:63342/dynas/js/angular/angular.min.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/ConfigurationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/service/ConfigurationService.js">
@@ -1073,13 +1158,6 @@
     <entry file="http://localhost:63342/dynas/js/app.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/service/GroupService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-        </state>
       </provider>
     </entry>
     <entry file="http://localhost:63342/dynas/js/controllers/ConfigurationController.js">
@@ -1114,26 +1192,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/sprints.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="98" column="14" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/configuration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/modal/sprint-edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,14 +1233,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/provider/IdentityProvider.js" />
-    <entry file="file://$PROJECT_DIR$/js/controllers/SprintController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/angular/angular.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1194,7 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-89">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,15 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="25" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/service/LoginService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1226,7 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,38 +1275,125 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/modal/UserEditionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/sprints.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="98" column="14" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/modal/sprint-edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/modal/user-edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/UserMenuController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/service/SprintService.js">
+    <entry file="file://$PROJECT_DIR$/js/service/LoginService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="183">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/TransactionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/service/UserService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="-816">
+          <caret line="6" column="62" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        <state relative-caret-position="404">
+          <caret line="84" column="33" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/SprintController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="65" column="51" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/service/TransactionService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/modal/GroupEditionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/ConfigurationController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/service/GroupService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/service/SprintService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>

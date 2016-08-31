@@ -4,7 +4,13 @@ app.controller('UserEditionController', ['$scope', '$uibModalInstance', 'GroupSe
             $scope.user = user;
             $scope.onEdition = onEdition;
 
-            $scope.groups = GroupService.get();
+            GroupService.get()
+                .then(function (grupos) {
+                    $scope.groups = grupos;
+                })
+                .catch(function () {
+                    //TODO:  Tratar erros
+                });
 
             $scope.ok = function () {
                 if ($scope.userEditForm.$valid) {

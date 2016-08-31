@@ -7,7 +7,12 @@ app.controller('GroupEditionController', ['$scope', '$uibModalInstance', 'GroupS
             $scope.ok = function () {
                 if ($scope.groupEditForm.$valid) {
 
-                    var promise = GroupService.save($scope.group);
+                    var promise;
+                    if (onEdition) {
+                        promise = GroupService.save($scope.group);
+                    } else {
+                        promise = GroupService.create($scope.group);
+                    }
 
                     promise.then(function () {
                         //TODO: Mensagem de sucesso

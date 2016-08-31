@@ -75,7 +75,7 @@ app.controller('ConfigurationController', ['$scope', '$uibModal', 'blockUI', 'Co
 
             var openModal = function (group) {
 
-                var onEdition = (group);
+                var onEdition = (group !== undefined);
                 group = group || {};
 
                 var modalInstance = $uibModal.open({

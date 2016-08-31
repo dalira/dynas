@@ -13,6 +13,13 @@
         </div>
         <div class="form-group col-xs-6">
             <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user-secret"></i></span>
+                <input name="text" type="text" class="form-control" placeholder="Login do Usuário"
+                       ng-model="user.login" required="true">
+            </div>
+        </div>
+        <div class="form-group col-xs-6">
+            <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-at"></i></span>
                 <input name="email" type="email" class="form-control" placeholder="Email do Usuário"
                        ng-model="user.email" required="true">
@@ -22,7 +29,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                 <select name="sprintGroup" class="form-control" ng-model="user.group" required="true"
-                        ng-options="group as group.name for group in groups track by group.id">
+                        ng-options="group as group.name for group in groups track by group._id">
                     <option class="placeholder" value="">Grupo...</option>
                 </select>
             </div>
