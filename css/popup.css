@@ -1,9 +1,8 @@
-body, html {
+/*body, html {
     min-width: 300px;
     width: 300px;
     max-width: 300px;
-}
-
+}*/
 
 .values {
     width: 100%;
@@ -32,5 +31,9 @@ body, html {
 }
 
 .buttons, .values {
+    margin-top: 10px;
+}
+
+.main-content div {
     margin-top: 10px;
 }
