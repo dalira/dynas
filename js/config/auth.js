@@ -24,8 +24,7 @@ app.factory('tokenAuthInterceptor', ['$q', '$window',
                     LoginService.getCurrentUser()
                         .then(function () {
                             if (newUrl.originalPath === "/login") {
-                                //Se ja estiver logado acessando o login, vai pra sprints
-                                RouteService.toSprintScreen();
+                                RouteService.toMainScreen();
                             }
                         })
                         .catch(function () {

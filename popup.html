@@ -25,21 +25,25 @@
 <div class="container">
     <div class="col-xs-12">
         <div class="main-content ">
+
             <div class="header col-xs-12 text-center">
                 <div class="logo col-xs-12">
                     <span class="icon-dyna-logo fa-4x"></span>
                 </div>
             </div>
 
-            <ng-include src="'partials/plugin.html'"></ng-include>
+            <div ng-view></div>
 
         </div>
     </div>
 </div>
 
 <script src="js/angular/angular.min.js"></script>
+<script src="js/angular/angular-resource.min.js"></script>
 <script src="js/angular/angular-route.min.js"></script>
 <script src="js/angular/angular-animate.min.js"></script>
+<script src="js/angular/angular-locale_pt-br.js"></script>
+
 
 <!--Component-->
 <script src="js/component/block-ui/angular-block-ui.min.js"></script>
@@ -49,13 +53,23 @@
 <script src="js/app.js"></script>
 
 <!--Config-->
+<script src="js/config/routes-plugin.js"></script>
+<script src="js/config/auth.js"></script>
 <script src="js/config/block-ui-config.js"></script>
+<script src="js/config/response-default-types.js"></script>
 
 <!--Service-->
-<script src="js/service/RouteService.js"></script>
+<script src="js/service/plugin/PluginRouteService.js"></script>
+<script src="js/service/TransactionService.js"></script>
+<script src="js/service/SprintService.js"></script>
+<script src="js/service/LoginService.js"></script>
+<script src="js/service/UserService.js"></script>
 
 <!--Controller-->
-<script src="js/controllers/PluginController.js"></script>
+<script src="js/controllers/plugin/PluginController.js"></script>
+<script src="js/controllers/plugin/SendController.js"></script>
+<script src="js/controllers/plugin/QuestionController.js"></script>
+<script src="js/controllers/LoginController.js"></script>
 
 </body>
 </html>

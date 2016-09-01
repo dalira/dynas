@@ -1,35 +1,34 @@
 <link href="css/plugin.css" rel="stylesheet" type="text/css">
+
 <div ng-controller="PluginController">
     <div class="sprint col-xs-12 text-center">
         <div class="col-xs-12">
-            <span>Sprint Stairway to Heaven</span>
+            <span>{{currentSprint.name}}</span>
         </div>
         <div class="col-xs-12">
-            <sub>31/08/2016</sub>
+            <sub>{{currentSprint.end | date: 'dd/MM/yyyy' }}</sub>
         </div>
     </div>
 
     <div class="values text-center">
         <div class="bank">
             <span class="glyphicon glyphicon-piggy-bank"></span>
-            <span>1800</span>
+            <span>{{bankValue}}</span>
         </div>
         <div class="income">
             <span class="fa fa-arrow-down"></span>
-            <span>300</span>
+            <span>{{receivedValue}}</span>
         </div>
     </div>
 
     <div class="buttons col-xs-12">
         <div class="col-xs-6">
-            <a class="btn btn-default col-xs-12 enviar" uib-popover-template="sendTemplate"
-               popover-placement="top-left">
+            <a class="btn btn-default col-xs-12 enviar" ng-click="toSendScreen()">
                 <span class="fa fa-paper-plane fa-2x"></span>
             </a>
         </div>
         <div class="col-xs-6">
-            <a class="btn btn-default col-xs-12 questionar" uib-popover-template="questionTemplate"
-               popover-placement="top-right">
+            <a class="btn btn-default col-xs-12 questionar" ng-click="toQuestionScreen()">
             <span class="fa-stack fa-2x" style="top: -25%">
                 <i class="fa fa-question fa-stack-3x"></i>
                 <i class="fa fa-arrow-down fa-stack-1x"></i>

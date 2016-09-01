@@ -2,6 +2,10 @@ app.factory('RouteService', ['sprintRoute', 'userRoute', 'transactionRoute', 'co
         function (sprintRoute, userRoute, transactionRoute, configurationRoute, loginRoute, $location) {
             var service = {};
 
+            service.toMainScreen = function () {
+                toSprintScreen();
+            };
+
             service.isSprintScreenActive = function () {
                 return $location.path() === sprintRoute;
             };
