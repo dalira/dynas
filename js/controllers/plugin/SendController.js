@@ -1,8 +1,16 @@
-app.controller('SendController', ['$scope', 'RouteService',
-    function ($scope, RouteService) {
+app.controller('SendController', ['$scope', 'RouteService', 'UserService', 'LoginService',
+    function ($scope, RouteService, UserService, LoginService) {
 
-        $scope.currentUser = [];
-        $scope.users = [];
+        LoginService.getCurrentUser()
+            .then(function (user) {
+
+                $scope.identity = user;
+                $scope.transaction.from = user;
+
+                return UserService.getFromGroup(user.group);
+            }).then(function (users) {
+            $scope.users = users;
+        });
 
         $scope.transaction = {
             value: 0
@@ -29,7 +37,7 @@ app.controller('SendController', ['$scope', 'RouteService',
         };
 
         $scope.send = function () {
-
+            console.log($scope.transaction);
         };
 
         $scope.cancel = function () {

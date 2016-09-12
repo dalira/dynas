@@ -67,7 +67,7 @@ app.factory('LoginService', ['$q', '$window', '$resource', '$window', 'serverBas
         function getCurrentUser() {
             var promise;
             if (currentUser) {
-                promise = $q.resolve(this.user);
+                promise = $q.resolve(currentUser);
             } else {
                 var def = $q.defer();
 

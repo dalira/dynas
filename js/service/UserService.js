@@ -25,6 +25,21 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
         return def.promise;
     }
 
+    function getFromGroup(group) {
+        var def = $q.defer();
+
+        User.get({'group': group._id}).$promise
+            .then(function (page) {
+                def.resolve(page.items);
+            })
+            .catch(function (err) {
+                console.error(err);
+                def.reject();
+            });
+
+        return def.promise;
+    }
+
     function query(filter, page) {
         var def = $q.defer();
 
@@ -75,6 +90,7 @@ app.factory('UserService', ['$q', '$resource', 'serverBasePath', function ($q, $
 
     return {
         get: get,
+        getFromGroup: getFromGroup,
         query: query,
         create: create,
         save: save
