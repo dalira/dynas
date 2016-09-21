@@ -23,7 +23,7 @@ app.controller('LoginController', ['$scope', 'LoginService', 'RouteService', 'bl
             LoginService.login($scope.user)
                 .then(function () {
                     blockUI.stop();
-                    RouteService.toSprintScreen();
+                    RouteService.toMainScreen();
                 })
                 .catch(function () {
                     blockUI.stop();
